@@ -36,7 +36,7 @@ export function HeroSection({
     <section
       id={sectionId}
       ref={heroRef}
-      className="relative h-screen min-h-[680px] w-full overflow-hidden bg-[#111111]"
+      className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#111111]"
     >
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
