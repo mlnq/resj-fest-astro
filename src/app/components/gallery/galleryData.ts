@@ -80,7 +80,7 @@ export const galleryCollections = [
     title: "Scena i koncert",
     description: "Kadry ze sceny, światła, tłumu i wieczornego koncertu.",
     count: "38 zdjęć",
-    accentClassName: "bg-[#325DA8]",
+    accentClassName: "bg-[var(--festival-violet)]",
   },
   {
     title: "Modlitwa i Eucharystia",

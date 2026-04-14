@@ -45,7 +45,7 @@ export function SiteFooter() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={label}
-                  className="text-[#232323] transition hover:text-[#325DA8]"
+                  className="text-[#232323] transition hover:text-[var(--festival-violet)]"
                 >
                   <Icon className="h-5 w-5" strokeWidth={2.2} />
                 </a>
@@ -53,7 +53,7 @@ export function SiteFooter() {
               <a
                 href="mailto:rejsfest@gmail.com"
                 aria-label="Mail Rejs Fest"
-                className="text-[#232323] transition hover:text-[#325DA8]"
+                className="text-[#232323] transition hover:text-[var(--festival-violet)]"
               >
                 <Mail className="h-5 w-5" strokeWidth={2.2} />
               </a>

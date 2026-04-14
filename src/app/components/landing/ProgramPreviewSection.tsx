@@ -28,7 +28,7 @@ export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps)
               className="bg-[#F1F4F8] p-6 shadow-[0_12px_32px_rgba(33,49,78,0.10)]"
               style={{ clipPath: "polygon(1% 0, 100% 1%, 99% 100%, 0 99%)" }}
             >
-              <p className="mb-3 text-sm font-black uppercase tracking-[0.16em] text-[#325DA8]">
+              <p className="mb-3 text-sm font-black uppercase tracking-[0.16em] text-[var(--festival-violet)]">
                 {item.time}
               </p>
               <h3 className="text-2xl font-black tracking-[-0.03em] text-[#2A2F3B]">
@@ -41,7 +41,7 @@ export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps)
         <div className="mt-8 text-center">
           <a
             href={withBasePath("/program")}
-            className="inline-flex bg-[#325DA8] px-8 py-4 text-lg font-black uppercase text-white shadow-lg hover:bg-[#2A4D8F]"
+            className="inline-flex bg-[var(--festival-violet)] px-8 py-4 text-lg font-black uppercase text-white shadow-lg hover:bg-[#8689BF]"
             style={{ clipPath: "polygon(2% 0, 100% 0, 98% 100%, 0 100%)" }}
           >
             Zobacz pełny program

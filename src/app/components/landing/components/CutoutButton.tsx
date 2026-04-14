@@ -11,7 +11,7 @@ type CutoutButtonProps = ComponentPropsWithoutRef<typeof motion.button> & {
 };
 
 const variantClasses: Record<CutoutButtonVariant, string> = {
-  blue: "bg-[#325DA8] text-white hover:bg-[#2A4D8F] shadow-lg",
+  blue: "bg-[var(--festival-violet)] text-white hover:bg-[#8689BF] shadow-lg",
   yellow: "bg-[#F9E926] text-gray-900 hover:bg-[#E5D520] shadow-xl",
 };
 

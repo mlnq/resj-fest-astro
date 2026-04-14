@@ -19,7 +19,7 @@ export function FinalCtaSection({
   return (
     <section
       id={sectionId}
-      className="relative overflow-hidden bg-[radial-gradient(circle_at_center,#5D8EE8_0%,#3F72D0_38%,#2E5BA8_70%,#244988_100%)] px-5 py-20 text-white md:px-6 md:py-18"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_center,#C4C6EA_0%,#9DA0D0_38%,#8689BF_70%,#666A9B_100%)] px-5 py-20 text-white md:px-6 md:py-18"
     >
       <div className="absolute inset-0">
         <div className="absolute left-[-8%] top-[8%] h-40 w-40 rounded-full bg-white/10 blur-3xl md:h-72 md:w-72" />
@@ -54,23 +54,23 @@ export function FinalCtaSection({
           Do Nas!
         </h2>
 
-        <p className="mx-auto mt-8 max-w-lg text-xl leading-[1.35] text-[#C9D5F4] md:mt-7 md:text-[1.22rem]">
+        <p className="mx-auto mt-8 max-w-lg text-xl leading-[1.35] text-[#ECECFA] md:mt-7 md:text-[1.22rem]">
           Bądź na bieżąco z ogłoszeniami i informacjami o biletach.
         </p>
 
         <div className="mx-auto mt-10 max-w-2xl md:mt-8 md:max-w-lg">
           <div className="relative md:mx-auto md:max-w-[28rem]">
-            <img src={assetUrl(labelTwoSvg)} alt="" className="block w-full opacity-80" />
+            <img src={assetUrl(labelTwoSvg)} alt="" className="block w-full opacity-95" />
             <input
               type="email"
               placeholder="TWÓJ EMAIL"
-              className="absolute inset-0 w-full bg-transparent px-8 text-center text-xl font-black uppercase tracking-[0.03em] text-white placeholder:text-[#AFC0F2]/80 focus:outline-none md:px-8 md:text-[1.2rem]"
+              className="absolute inset-0 w-full bg-transparent px-8 text-center text-xl font-black uppercase tracking-[0.03em] text-white placeholder:text-[#F5F4FD]/85 focus:outline-none md:px-8 md:text-[1.2rem]"
             />
           </div>
 
           <button
             type="button"
-            className="mt-5 flex w-full items-center justify-center gap-3 bg-white px-8 py-5 text-center text-2xl font-black uppercase tracking-[-0.03em] text-[#325DA8] shadow-[0_18px_40px_rgba(18,40,89,0.24)] transition-transform hover:scale-[1.01] md:mx-auto md:max-w-[28rem] md:py-3.5 md:text-[1.45rem]"
+            className="mt-5 flex w-full items-center justify-center gap-3 bg-white px-8 py-5 text-center text-2xl font-black uppercase tracking-[-0.03em] text-[var(--festival-violet)] shadow-[0_18px_40px_rgba(102,106,155,0.28)] transition-transform hover:scale-[1.01] md:mx-auto md:max-w-[28rem] md:py-3.5 md:text-[1.45rem]"
             style={{ clipPath: "polygon(2% 0, 98% 0, 100% 48%, 98% 100%, 2% 100%, 0 50%)" }}
           >
             <span>Zapisz Się</span>

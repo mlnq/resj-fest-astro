@@ -65,7 +65,7 @@ export function DesktopTopBar({
 
         <nav
           className={`flex items-center gap-10 transition-colors duration-300 ${
-            isSolid ? "text-[#325DA8]" : "text-[#325DA8]"
+            isSolid ? "text-[#503967]" : "text-[#503967]"
           }`}
         >
           {desktopNavItems.map((item) => (
@@ -77,7 +77,7 @@ export function DesktopTopBar({
             >
               {item.label}
               <span
-                className={`absolute inset-x-0 -bottom-0.5 h-[3px] bg-[#325DA8] transition-opacity duration-200 ${
+                className={`absolute inset-x-0 -bottom-0.5 h-[3px] bg-[#503967] transition-opacity duration-200 ${
                   activeSectionId === item.id ? "opacity-100" : "opacity-0"
                 }`}
               />

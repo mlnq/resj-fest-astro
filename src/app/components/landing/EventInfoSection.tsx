@@ -35,7 +35,7 @@ const infoItems = [
     description:
       "Strefa główna jest otwarta, ale na warsztaty i wybrane aktywności może obowiązywać limit miejsc. Warto zapisać się wcześniej.",
     icon: Ticket,
-    accent: "#325DA8",
+    accent: "#9DA0D0",
   },
   {
     title: "Godziny wejścia",
@@ -49,7 +49,7 @@ const infoItems = [
     description:
       "Na miejsce najlepiej dojechać komunikacją miejską lub wspólnym transportem. Samochód warto zostawić nieco dalej i podejść pieszo.",
     icon: Car,
-    accent: "#325DA8",
+    accent: "#9DA0D0",
   },
   {
     title: "Dostępność",

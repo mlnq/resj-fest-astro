@@ -22,7 +22,7 @@ export function NiemaGotuSection({ sectionId }: NiemaGotuSectionProps) {
       </div>
 
       <div
-        className="absolute top-0 left-0 h-56 w-56 -translate-x-1/3 -translate-y-1/3 bg-[#325DA8]/10"
+        className="absolute top-0 left-0 h-56 w-56 -translate-x-1/3 -translate-y-1/3 bg-[rgba(157,160,208,0.16)]"
         style={{
           clipPath:
             "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",

@@ -21,7 +21,7 @@ export function GallerySection({ sectionId }: GallerySectionProps) {
         className="relative bg-[#F1F4F8] px-4 py-16 md:px-6 md:py-24"
       >
         <div
-          className="absolute bottom-0 left-0 h-48 w-48 bg-[#325DA8]/10"
+          className="absolute bottom-0 left-0 h-48 w-48 bg-[rgba(157,160,208,0.16)]"
           style={{ clipPath: "polygon(0 50%, 50% 0, 100% 50%, 50% 100%)" }}
         />
 
