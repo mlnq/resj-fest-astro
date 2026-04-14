@@ -16,6 +16,7 @@ export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps)
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           title="Program"
+          titleClassName="text-5xl tracking-[0.03em] md:text-5xl"
           description="Na stronie głównej zostawiamy szybki skrót. Pełny harmonogram dnia znajdziesz na osobnej podstronie."
         />
 

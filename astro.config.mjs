@@ -9,4 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://mlnq.github.io',
+  base: '/resj-fest-astro',
 });

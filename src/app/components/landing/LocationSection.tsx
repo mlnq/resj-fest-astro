@@ -14,7 +14,7 @@ export function LocationSection({ sectionId }: LocationSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
-          className="mb-10 text-5xl font-black uppercase tracking-[-0.04em] text-[#2F3A50] md:mb-10 md:text-5xl"
+          className="font-rejsfest mb-10 text-5xl uppercase tracking-[0.03em] text-[#2F3A50] md:mb-10 md:text-5xl"
         >
           Miejsce
         </motion.h2>
