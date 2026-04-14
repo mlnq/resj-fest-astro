@@ -1,0 +1,45 @@
+{
+  "name": "vscode-hook-highlighter",
+  "displayName": "Hook Highlighter",
+  "description": "Highlights React hooks like useEffect and custom use* hooks.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Hook Highlighter",
+      "properties": {
+        "hookHighlighter.color": {
+          "type": "string",
+          "default": "#8E75A7",
+          "description": "Color used to highlight hook identifiers."
+        },
+        "hookHighlighter.fontWeight": {
+          "type": "string",
+          "default": "700",
+          "enum": [
+            "normal",
+            "600",
+            "700",
+            "800",
+            "bold"
+          ],
+          "description": "Font weight used to highlight hook identifiers."
+        }
+      }
+    }
+  }
+}

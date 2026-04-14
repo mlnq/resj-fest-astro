@@ -55,7 +55,7 @@ export function ThemeSection({
   return (
     <section
       id={sectionId}
-      className="relative bg-[#EBEBF5] px-4 py-16 md:px-6 md:py-24"
+      className="relative bg-[#F1F4F8] px-4 py-16 md:px-6 md:py-24"
     >
       <div className="absolute top-10 right-10 h-32 w-32 rounded-full bg-[#F9E926]/20 blur-3xl" />
       <div className="absolute bottom-20 left-10 h-40 w-40 rounded-full bg-[#9DA0D0]/20 blur-3xl" />

@@ -2,7 +2,6 @@ import { motion, type MotionValue } from "motion/react";
 import type { RefObject } from "react";
 
 const desktopNavItems = [
-  { id: "start", label: "Start" },
   { id: "historia", label: "Historia" },
   { id: "plan", label: "Plan" },
   { id: "miejsce", label: "Miejsce" },
@@ -66,7 +65,7 @@ export function DesktopTopBar({
 
         <nav
           className={`flex items-center gap-10 transition-colors duration-300 ${
-            isSolid ? "text-black" : "text-white"
+            isSolid ? "text-[#325DA8]" : "text-[#325DA8]"
           }`}
         >
           {desktopNavItems.map((item) => (

@@ -13,7 +13,7 @@ const previewItems = [
 
 export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps) {
   return (
-    <section id={sectionId} className="bg-[#F2F5FA] px-5 py-18 md:px-8 md:py-24">
+    <section id={sectionId} className="bg-[#FFFFFF] px-5 py-18 md:px-8 md:py-24">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           title="Program"
@@ -25,7 +25,7 @@ export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps)
           {previewItems.map((item) => (
             <article
               key={item.time}
-              className="bg-white p-6 shadow-[0_12px_32px_rgba(33,49,78,0.10)]"
+              className="bg-[#F1F4F8] p-6 shadow-[0_12px_32px_rgba(33,49,78,0.10)]"
               style={{ clipPath: "polygon(1% 0, 100% 1%, 99% 100%, 0 99%)" }}
             >
               <p className="mb-3 text-sm font-black uppercase tracking-[0.16em] text-[#325DA8]">
