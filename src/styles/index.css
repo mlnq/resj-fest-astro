@@ -1,0 +1,12 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@import "./fonts.css";
+@import "./theme.css";
+
+@source "../pages/**/*.astro";
+@source "../layouts/**/*.astro";
+@source "../app/pages/**/*.{ts,tsx}";
+@source "../app/components/landing/**/*.{ts,tsx}";
+@source "../app/components/gallery/**/*.{ts,tsx}";
+@source "../app/components/ui/dialog.tsx";
+@source "../app/components/ui/scroll-area.tsx";
