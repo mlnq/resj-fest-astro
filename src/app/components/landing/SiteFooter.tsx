@@ -1,4 +1,5 @@
 import { Instagram, Mail, Phone } from "lucide-react";
+import { withBasePath } from "../../utils/assets";
 
 export function SiteFooter() {
   return (
@@ -47,22 +48,22 @@ export function SiteFooter() {
             Informacje
           </h3>
           <div className="space-y-3 text-[1rem] text-[#667089]">
-            <a href="/regulamin" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/regulamin")} className="block hover:text-[#21314E]">
               Regulamin
             </a>
-            <a href="/polityka-prywatnosci" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/polityka-prywatnosci")} className="block hover:text-[#21314E]">
               Polityka prywatności
             </a>
-            <a href="/program" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/program")} className="block hover:text-[#21314E]">
               Program
             </a>
-            <a href="/informacje" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/informacje")} className="block hover:text-[#21314E]">
               Informacje dla uczestników
             </a>
-            <a href="/faq" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/faq")} className="block hover:text-[#21314E]">
               FAQ
             </a>
-            <a href="/organizatorzy-i-partnerzy" className="block hover:text-[#21314E]">
+            <a href={withBasePath("/organizatorzy-i-partnerzy")} className="block hover:text-[#21314E]">
               Organizatorzy i partnerzy
             </a>
           </div>

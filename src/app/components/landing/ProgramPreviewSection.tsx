@@ -1,4 +1,5 @@
 import { SectionHeading } from "./components/SectionHeading";
+import { withBasePath } from "../../utils/assets";
 
 type ProgramPreviewSectionProps = {
   sectionId?: string;
@@ -39,7 +40,7 @@ export function ProgramPreviewSection({ sectionId }: ProgramPreviewSectionProps)
 
         <div className="mt-8 text-center">
           <a
-            href="/program"
+            href={withBasePath("/program")}
             className="inline-flex bg-[#325DA8] px-8 py-4 text-lg font-black uppercase text-white shadow-lg hover:bg-[#2A4D8F]"
             style={{ clipPath: "polygon(2% 0, 100% 0, 98% 100%, 0 100%)" }}
           >

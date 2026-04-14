@@ -1,5 +1,6 @@
 import { CutoutButton } from "../landing/components/CutoutButton";
 import { SectionHeading } from "../landing/components/SectionHeading";
+import { withBasePath } from "../../utils/assets";
 
 export function GalleryCtaSection() {
   return (
@@ -16,7 +17,7 @@ export function GalleryCtaSection() {
             className="px-10 py-3 text-base md:px-12 md:py-4 md:text-lg"
             whileHover={{ scale: 1.05, rotate: -1 }}
             onClick={() => {
-              window.location.href = "/";
+              window.location.href = withBasePath("/");
             }}
           >
             Zobacz stronę główną

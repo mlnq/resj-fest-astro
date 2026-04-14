@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { CutoutButton } from "../landing/components/CutoutButton";
+import { withBasePath } from "../../utils/assets";
 
 type GalleryHeroSectionProps = {
   palmaSrc: string;
@@ -45,7 +46,7 @@ export function GalleryHeroSection({
             className="px-8 py-3 text-sm md:text-base"
             whileHover={{ scale: 1.05, rotate: -1 }}
             onClick={() => {
-              window.location.href = "/";
+              window.location.href = withBasePath("/");
             }}
           >
             Wróć na stronę główną
