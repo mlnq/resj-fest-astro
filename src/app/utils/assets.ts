@@ -5,7 +5,8 @@ export function assetUrl(asset: AssetLike) {
 }
 
 export function withBasePath(path: string) {
-  const baseUrl = import.meta.env.BASE_URL;
+  const rawBaseUrl = import.meta.env.BASE_URL || "/";
+  const baseUrl = rawBaseUrl.endsWith("/") ? rawBaseUrl : `${rawBaseUrl}/`;
   const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
 
   return `${baseUrl}${normalizedPath}`;
