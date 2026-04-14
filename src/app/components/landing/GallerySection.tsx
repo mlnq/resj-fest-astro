@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import Lightbox from "yet-another-react-lightbox";
 import { galleryPreviewItems } from "../gallery/galleryData";
+import { withBasePath } from "../../utils/assets";
 import { CutoutButton } from "./components/CutoutButton";
 import { GalleryTile } from "./components/GalleryTile";
 import { SectionHeading } from "./components/SectionHeading";
@@ -65,7 +66,7 @@ export function GallerySection({ sectionId }: GallerySectionProps) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => {
-                window.location.href = "/galeria";
+                window.location.href = withBasePath("/galeria");
               }}
             >
               Otwórz pełną galerię
