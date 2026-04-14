@@ -7,6 +7,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { withBasePath } from "../../utils/assets";
 import { SectionHeading } from "./components/SectionHeading";
 
 type InfoHubSectionProps = {
@@ -17,42 +18,42 @@ const hubItems = [
   {
     title: "Szczegółowy program",
     description: "Pełna rozpiska dnia z godzinami, blokami i opisem wydarzeń.",
-    href: "/program",
+    href: withBasePath("/program"),
     icon: ScrollText,
     accent: "#325DA8",
   },
   {
     title: "Informacje dla uczestników",
     description: "Dojazd, wejście, koszt, limity miejsc, parking i co zabrać.",
-    href: "/informacje",
+    href: withBasePath("/informacje"),
     icon: MapPinned,
     accent: "#F9E926",
   },
   {
     title: "FAQ",
     description: "Najczęstsze pytania o zapis, wejście, grupy i przebieg dnia.",
-    href: "/faq",
+    href: withBasePath("/faq"),
     icon: CircleHelp,
     accent: "#F29BBE",
   },
   {
     title: "Organizatorzy i partnerzy",
     description: "Kto stoi za wydarzeniem, kontakt oraz miejsce na sponsorów i patronów.",
-    href: "/organizatorzy-i-partnerzy",
+    href: withBasePath("/organizatorzy-i-partnerzy"),
     icon: Handshake,
     accent: "#9DA0D0",
   },
   {
     title: "Regulamin",
     description: "Zasady uczestnictwa i informacje organizacyjne w pełnej wersji.",
-    href: "/regulamin",
+    href: withBasePath("/regulamin"),
     icon: FileText,
     accent: "#325DA8",
   },
   {
     title: "Polityka prywatności",
     description: "Informacje o przetwarzaniu danych, formularzach i komunikacji.",
-    href: "/polityka-prywatnosci",
+    href: withBasePath("/polityka-prywatnosci"),
     icon: ShieldCheck,
     accent: "#F29BBE",
   },
