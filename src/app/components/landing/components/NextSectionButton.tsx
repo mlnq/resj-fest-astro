@@ -20,7 +20,7 @@ export function NextSectionButton({
       transition={{ duration: 0.25 }}
       whileHover={{ y: -2, scale: 1.04 }}
       whileTap={{ scale: 0.96 }}
-      className="fixed bottom-8 left-1/2 z-50 hidden h-16 w-16 -translate-x-1/2 items-center justify-center bg-[#325DA8] text-white shadow-[0_12px_32px_rgba(16,36,79,0.28)] md:flex"
+      className="fixed bottom-8 left-1/2 z-50 hidden h-16 w-16 -translate-x-1/2 items-center justify-center bg-[var(--festival-violet)] text-white shadow-[0_12px_32px_rgba(157,160,208,0.34)] md:flex"
       style={{
         clipPath: "polygon(14% 0, 100% 10%, 86% 100%, 0 90%)",
         pointerEvents: hidden ? "none" : "auto",

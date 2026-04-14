@@ -4,9 +4,13 @@
   --font-size: 16px;
   --background: #ffffff;
   --festival-blue: #325da8;
+  --festival-blue-dark: #244988;
   --festival-violet: #9da0d0;
+  --festival-violet-dark: #503967;
   --festival-pink: #f29bbe;
+  --festival-pink-dark: #a35378;
   --festival-yellow: #f9e926;
+  --festival-yellow-dark: #8a7c14;
   --foreground: oklch(0.145 0 0);
   --card: #ffffff;
   --card-foreground: oklch(0.145 0 0);
@@ -85,9 +89,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-festival-blue: var(--festival-blue);
+  --color-festival-blue-dark: var(--festival-blue-dark);
   --color-festival-violet: var(--festival-violet);
+  --color-festival-violet-dark: var(--festival-violet-dark);
   --color-festival-pink: var(--festival-pink);
+  --color-festival-pink-dark: var(--festival-pink-dark);
   --color-festival-yellow: var(--festival-yellow);
+  --color-festival-yellow-dark: var(--festival-yellow-dark);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -134,6 +142,13 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  button,
+  [role="button"],
+  a[href],
+  summary {
+    cursor: pointer;
   }
 
   /**

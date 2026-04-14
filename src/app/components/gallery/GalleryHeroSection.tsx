@@ -12,7 +12,7 @@ export function GalleryHeroSection({
   lodzSrc,
 }: GalleryHeroSectionProps) {
   return (
-    <section className="relative overflow-hidden bg-[#325DA8] px-4 py-20 text-white md:px-6 md:py-28">
+    <section className="relative overflow-hidden bg-[var(--festival-violet)] px-4 py-20 text-white md:px-6 md:py-28">
       <img
         src={palmaSrc}
         alt=""

@@ -40,7 +40,7 @@ export function HeroSection({
       ref={heroRef}
       className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FEFEFE]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(50,93,168,0.12),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(33,49,78,0.08),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(157,160,208,0.18),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(76,81,133,0.1),transparent_32%)]" />
       <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden md:block">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -83,9 +83,9 @@ export function HeroSection({
             transition={{ duration: 0.8 }}
           />
 
-          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#EAF0FB] px-4 py-3 text-[0.95rem] font-black tracking-[0.14em] text-[#325DA8] uppercase shadow-[0_12px_30px_rgba(50,93,168,0.08)] md:text-base">
+          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.95rem] font-black tracking-[0.14em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] md:text-base">
             <span>Białystok</span>
-            <span className="text-[#325DA8]/60">•</span>
+            <span className="text-[var(--festival-violet-dark)]/70">•</span>
             <span>Sierpień 2026</span>
           </div>
 
@@ -99,7 +99,7 @@ export function HeroSection({
 
           <div className="mt-4 flex items-center justify-center gap-3">
             <CutoutButton
-              colorClassName="bg-[#325DA8] text-white shadow-[0_16px_40px_rgba(50,93,168,0.24)] hover:bg-[#294C8F]"
+              colorClassName="bg-[var(--festival-violet)] text-white shadow-[0_16px_40px_rgba(157,160,208,0.3)] hover:bg-[#8689BF]"
               className="px-10 py-3 text-base md:px-14 md:py-4 md:text-lg"
               whileHover={{ scale: 1.05, rotate: -1 }}
             >
@@ -111,8 +111,11 @@ export function HeroSection({
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram Rejs Fest"
-              className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#325DA8]/14 bg-white text-[#325DA8] shadow-[0_14px_35px_rgba(33,49,78,0.08)] md:h-15 md:w-15"
-              style={{ clipPath: "polygon(12% 0, 100% 8%, 88% 100%, 0 92%)" }}
+              className="flex h-14 w-14 shrink-0 items-center justify-center border bg-white text-[var(--festival-violet)] shadow-[0_14px_35px_rgba(76,81,133,0.12)] md:h-15 md:w-15"
+              style={{
+                clipPath: "polygon(12% 0, 100% 8%, 88% 100%, 0 92%)",
+                borderColor: "rgba(157,160,208,0.28)",
+              }}
               whileHover={{ scale: 1.06, rotate: 2 }}
               whileTap={{ scale: 0.96 }}
             >

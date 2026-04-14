@@ -34,7 +34,7 @@ export function LocationSection({ sectionId }: LocationSectionProps) {
           </div>
 
           <div
-            className="relative z-10 mx-auto mt-18 max-w-[27rem] bg-[#325DA8] px-6 py-7 text-white shadow-[0_24px_40px_rgba(29,62,126,0.22)] md:mt-14 md:px-7 md:py-7"
+            className="relative z-10 mx-auto mt-18 max-w-[27rem] bg-[var(--festival-violet-dark)] px-6 py-7 text-white shadow-[0_24px_40px_rgba(45,53,74,0.28)] md:mt-14 md:px-7 md:py-7"
             style={{ clipPath: "polygon(3% 0, 98% 0, 100% 52%, 98% 100%, 4% 97%, 0 10%)" }}
           >
             <MapPin className="mb-5 h-12 w-12 text-white md:h-9 md:w-9" strokeWidth={2.2} />
@@ -43,7 +43,7 @@ export function LocationSection({ sectionId }: LocationSectionProps) {
               Dojlidy przy plaży
             </h3>
 
-            <p className="max-w-lg text-lg leading-[1.3] text-[#BFCDF0] md:text-[1.25rem]">
+            <p className="max-w-lg text-lg leading-[1.3] text-[#D6DCEF] md:text-[1.25rem]">
               Plac przy kościele Niepokalanego
               <br />
               Serca Maryi, Białystok
@@ -53,7 +53,7 @@ export function LocationSection({ sectionId }: LocationSectionProps) {
               href="https://maps.google.com/?q=Kościół+Niepokalanego+Serca+Maryi+Białystok+Dojlidy"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 flex w-full items-center justify-center bg-white px-6 py-4 text-center text-lg font-black uppercase text-[#325DA8] transition-transform hover:scale-[1.01] md:mt-7 md:py-3.5 md:text-[1.2rem]"
+              className="mt-8 flex w-full items-center justify-center bg-white px-6 py-4 text-center text-lg font-black uppercase text-[var(--festival-violet-dark)] transition-transform hover:scale-[1.01] md:mt-7 md:py-3.5 md:text-[1.2rem]"
               style={{ clipPath: "polygon(1% 0, 100% 0, 99% 100%, 0 100%)" }}
             >
               Otwórz Mapę

@@ -29,7 +29,7 @@ export function MobilePanelNav() {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-40 px-4 md:hidden">
       <div
-        className="pointer-events-auto grid grid-cols-5 bg-[#325DA8] px-3 py-4 shadow-lg"
+        className="pointer-events-auto grid grid-cols-5 bg-[#503967] px-3 py-4 shadow-lg"
         style={{ clipPath: "polygon(2% 0, 100% 0, 98% 100%, 0 100%)" }}
       >
         {navItems.map((item) => {

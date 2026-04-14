@@ -33,7 +33,7 @@ const articles = [
     excerpt:
       "Poznaj zespół, który zagra podczas festiwalu. Ich muzyka łączy pokolenia i niesie przesłanie nadziei.",
     date: "10 kwietnia 2026",
-    color: "#3D66B3",
+    color: "#9DA0D0",
     content: [
       "Wieczorny koncert będzie jednym z najmocniejszych punktów programu. Zaproszony zespół stawia na brzmienie, które jest jednocześnie energetyczne i komunikatywne, dzięki czemu dobrze działa zarówno na scenie plenerowej, jak i w bardziej modlitewnym klimacie wydarzenia.",
       "To nie jest przypadkowy booking. Szukaliśmy składu, który potrafi połączyć koncertowe doświadczenie z treścią, która nie rozmywa sensu całego dnia. Muzyka ma tu domknąć festiwal, ale też otworzyć uczestników na głębsze przeżycie wspólnoty.",
@@ -101,7 +101,7 @@ export function ArticlesSection({ sectionId }: ArticlesSectionProps) {
           if (!open) setSelectedArticleIndex(null);
         }}
       >
-        <DialogContent className="max-h-[calc(100%-2rem)] w-[calc(100%-2rem)] max-w-4xl gap-0 overflow-hidden border-[2px] border-[#DCE2EA] bg-[#FFFFFF] p-0 shadow-none sm:w-auto [&>button]:top-1 [&>button]:right-1 [&>button]:z-20 [&>button]:h-13 [&>button]:w-13 [&>button]:rounded-none [&>button]:border-0 [&>button]:bg-[#3D66B3] [&>button]:text-white [&>button]:opacity-100 md:[&>button]:top-3 md:[&>button]:right-5 md:[&>button]:h-14 md:[&>button]:w-14 [&>button_svg]:size-8">
+        <DialogContent className="max-h-[calc(100%-2rem)] w-[calc(100%-2rem)] max-w-4xl gap-0 overflow-hidden border-[2px] border-[#DCE2EA] bg-[#FFFFFF] p-0 shadow-none sm:w-auto [&>button]:top-1 [&>button]:right-1 [&>button]:z-20 [&>button]:h-13 [&>button]:w-13 [&>button]:rounded-none [&>button]:border-0 [&>button]:bg-[var(--festival-violet)] [&>button]:text-white [&>button]:opacity-100 md:[&>button]:top-3 md:[&>button]:right-5 md:[&>button]:h-14 md:[&>button]:w-14 [&>button_svg]:size-8">
           {selectedArticle ? (
             <>
               <div className="grid grid-cols-1 gap-4 border-b border-[#E9EDF2] px-6 pt-10 pb-5 pr-20 md:flex md:items-center md:justify-between md:px-8 md:pt-5 md:pb-5 md:pr-8">
