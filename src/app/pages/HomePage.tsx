@@ -42,7 +42,6 @@ export function HomePage() {
   const [activeSectionId, setActiveSectionId] = useState<string>(sectionOrder[0]);
   const [isTopBarVisible, setIsTopBarVisible] = useState(false);
   const [nextSectionId, setNextSectionId] = useState<string | null>(sectionOrder[1]);
-
   const { scrollYProgress } = useScroll({
     target: heroRef,
     container: containerRef,
@@ -146,6 +145,7 @@ export function HomePage() {
         heroRef={heroRef}
         sectionId="start"
         logoSrc={assetUrl(logoSvg)}
+        desktopLogoSrc={assetUrl(topBarLogoSvg)}
         heroBackgroundSrc={assetUrl(heroBackground)}
         lodzSrc={assetUrl(lodzSvg)}
         wodaSrc={assetUrl(wodaSvg)}

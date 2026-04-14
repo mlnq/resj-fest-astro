@@ -1,71 +1,77 @@
-import { Instagram, Mail, Phone } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Music2,
+  Youtube,
+} from "lucide-react";
+import packageJson from "../../../../package.json";
 import { withBasePath } from "../../utils/assets";
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/",
+    label: "Facebook Rejs Fest",
+    icon: Facebook,
+  },
+  {
+    href: "https://www.youtube.com/",
+    label: "YouTube Rejs Fest",
+    icon: Youtube,
+  },
+  {
+    href: "https://www.instagram.com/rejsfest",
+    label: "Instagram Rejs Fest",
+    icon: Instagram,
+  },
+  {
+    href: "https://open.spotify.com/",
+    label: "Spotify Rejs Fest",
+    icon: Music2,
+  },
+];
 
 export function SiteFooter() {
   return (
-    <footer className="bg-white px-5 py-14 text-[#21314E] md:px-8 md:py-16">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
-        <div>
-          <p className="font-rejsfest text-4xl uppercase tracking-[0.04em] text-[#21314E]">
-            Rejs Fest
-          </p>
-          <p className="mt-4 max-w-md text-base leading-7 text-[#667089]">
-            Festiwal doświadczenia młodego Kościoła. Strona zbiera najważniejsze
-            informacje, kontakt i aktualności dotyczące wydarzenia.
-          </p>
-        </div>
+    <footer className="bg-white px-4 py-8 text-[#232323] md:px-8 md:py-10">
+      <div className="mx-auto max-w-7xl px-2 py-4 md:px-0 md:py-5">
+        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-end md:justify-between md:text-left">
+          <div className="space-y-5">
+            <div className="flex flex-wrap items-center justify-center gap-5 md:justify-start">
+              {socialLinks.map(({ href, label, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="text-[#232323] transition hover:text-[#325DA8]"
+                >
+                  <Icon className="h-5 w-5" strokeWidth={2.2} />
+                </a>
+              ))}
+              <a
+                href="mailto:rejsfest@gmail.com"
+                aria-label="Mail Rejs Fest"
+                className="text-[#232323] transition hover:text-[#325DA8]"
+              >
+                <Mail className="h-5 w-5" strokeWidth={2.2} />
+              </a>
+            </div>
 
-        <div>
-          <h3 className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#F9E926]">
-            Kontakt I Media
-          </h3>
-          <div className="space-y-3 text-[1rem] text-[#667089]">
-            <a href="tel:123444121" className="flex items-center gap-3 hover:text-[#21314E]">
-              <Phone className="h-4 w-4" />
-              <span>123444121</span>
-            </a>
-            <a
-              href="mailto:rejsfest@gmail.com"
-              className="flex items-center gap-3 hover:text-[#21314E]"
-            >
-              <Mail className="h-4 w-4" />
-              <span>rejsfest@gmail.com</span>
-            </a>
-            <a
-              href="https://www.instagram.com/rejsfest"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 hover:text-[#21314E]"
-            >
-              <Instagram className="h-4 w-4" />
-              <span>@rejsfest</span>
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[0.98rem] font-medium text-[#4E5E7C] md:justify-start">
+              <a href={withBasePath("/polityka-prywatnosci")} className="transition hover:text-[#232323]">
+                Polityka prywatności
+              </a>
+              <a href={withBasePath("/informacje")} className="transition hover:text-[#232323]">
+                Kontakt
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div>
-          <h3 className="mb-4 text-sm font-black uppercase tracking-[0.2em] text-[#F29BBE]">
-            Informacje
-          </h3>
-          <div className="space-y-3 text-[1rem] text-[#667089]">
-            <a href={withBasePath("/regulamin")} className="block hover:text-[#21314E]">
-              Regulamin
-            </a>
-            <a href={withBasePath("/polityka-prywatnosci")} className="block hover:text-[#21314E]">
-              Polityka prywatności
-            </a>
-            <a href={withBasePath("/program")} className="block hover:text-[#21314E]">
-              Program
-            </a>
-            <a href={withBasePath("/informacje")} className="block hover:text-[#21314E]">
-              Informacje dla uczestników
-            </a>
-            <a href={withBasePath("/faq")} className="block hover:text-[#21314E]">
-              FAQ
-            </a>
-            <a href={withBasePath("/organizatorzy-i-partnerzy")} className="block hover:text-[#21314E]">
-              Organizatorzy i partnerzy
-            </a>
+          <div className="space-y-2 text-center text-sm font-medium leading-relaxed text-[#4E5E7C] md:max-w-[260px] md:text-right">
+            <p>Projekt i realizacja: Michał M</p>
+            <p>Wersja apki: v{packageJson.version}</p>
           </div>
         </div>
       </div>

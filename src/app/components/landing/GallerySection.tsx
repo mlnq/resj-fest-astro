@@ -18,7 +18,7 @@ export function GallerySection({ sectionId }: GallerySectionProps) {
     <>
       <section
         id={sectionId}
-        className="relative bg-white px-4 py-16 md:px-6 md:py-24"
+        className="relative bg-[#F1F4F8] px-4 py-16 md:px-6 md:py-24"
       >
         <div
           className="absolute bottom-0 left-0 h-48 w-48 bg-[#325DA8]/10"

@@ -1,6 +1,7 @@
 ---
 import "../styles/index.css";
 import "yet-another-react-lightbox/styles.css";
+import loaderLogo from "../assets/imports/logo.png";
 
 type Props = {
   title?: string;
@@ -23,7 +24,7 @@ const baseUrl = import.meta.env.BASE_URL;
 	<body class="is-loading">
 		<div class="page-loader" id="page-loader" aria-live="polite">
 			<div class="page-loader__inner">
-				<p class="page-loader__brand">Rejs Fest</p>
+				<img class="page-loader__brand" src={loaderLogo.src} alt="Rejs Fest" />
 				<p class="page-loader__status">
 					Loading<span class="page-loader__dots" aria-hidden="true">...</span>
 				</p>
@@ -89,12 +90,10 @@ const baseUrl = import.meta.env.BASE_URL;
 	}
 
 	.page-loader__brand {
-		margin: 0;
-		font-family: "RejsFest", cursive;
-		font-size: clamp(3rem, 10vw, 6rem);
-		line-height: 0.9;
-		letter-spacing: 0.03em;
-		text-transform: uppercase;
+		display: block;
+		width: min(68vw, 320px);
+		height: auto;
+		object-fit: contain;
 	}
 
 	.page-loader__status {

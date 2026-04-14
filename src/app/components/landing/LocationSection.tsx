@@ -7,7 +7,7 @@ type LocationSectionProps = {
 
 export function LocationSection({ sectionId }: LocationSectionProps) {
   return (
-    <section id={sectionId} className="bg-[#F2F5FA] px-5 py-18 md:px-8 md:py-18">
+    <section id={sectionId} className="bg-[#F1F4F8] px-5 py-18 md:px-8 md:py-18">
       <div className="mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 24 }}

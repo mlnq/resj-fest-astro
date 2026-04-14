@@ -11,14 +11,14 @@ export function NiemaGotuSection({ sectionId }: NiemaGotuSectionProps) {
   return (
     <section
       id={sectionId}
-      className="relative overflow-hidden bg-[#FFF9E6] px-4 py-16 md:px-6 md:py-24"
+      className="relative overflow-hidden bg-[#FEFEFE] px-4 py-16 md:px-6 md:py-24"
     >
       <div className="absolute inset-0">
         <div
           className="absolute inset-[-8%] scale-110 bg-cover bg-center bg-no-repeat opacity-100 blur-3xl"
           style={{ backgroundImage: `url(${assetUrl(niemaGotuImage)})` }}
         />
-        {/* <div className="absolute inset-0 bg-[#FFF9E6]/78" /> */}
+        {/* <div className="absolute inset-0 bg-[#FEFEFE]/78" /> */}
       </div>
 
       <div

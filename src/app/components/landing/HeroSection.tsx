@@ -7,6 +7,7 @@ type HeroSectionProps = {
   heroRef: RefObject<HTMLElement | null>;
   sectionId?: string;
   logoSrc: string;
+  desktopLogoSrc: string;
   heroBackgroundSrc: string;
   lodzSrc: string;
   wodaSrc: string;
@@ -22,101 +23,83 @@ export function HeroSection({
   heroRef,
   sectionId,
   logoSrc,
+  desktopLogoSrc,
   heroBackgroundSrc,
-  lodzSrc,
-  wodaSrc,
-  palmaSrc,
-  rybaSrc,
-  y1,
-  y2,
-  y3,
+  lodzSrc: _lodzSrc,
+  wodaSrc: _wodaSrc,
+  palmaSrc: _palmaSrc,
+  rybaSrc: _rybaSrc,
+  y1: _y1,
+  y2: _y2,
+  y3: _y3,
   opacity,
 }: HeroSectionProps) {
   return (
     <section
       id={sectionId}
       ref={heroRef}
-      className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#111111]"
+      className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FEFEFE]"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:bg-center"
-        style={{ backgroundImage: `url(${heroBackgroundSrc})` }}
-      />
-      <div className="absolute inset-0 bg-black/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30" />
-      <div className="absolute inset-0">
-        <div className="absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(50,93,168,0.12),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(33,49,78,0.08),transparent_32%)]" />
+      <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden md:block">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(234, 240, 251, 0.24) 100%), url(${heroBackgroundSrc})`,
+            clipPath: "polygon(33% 0, 100% 0, 100% 100%, 0 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 bg-[linear-gradient(135deg,rgba(246,249,255,0.92)_0%,rgba(216,229,252,0.72)_52%,rgba(155,188,241,0.52)_100%)] mix-blend-screen"
+          style={{ clipPath: "polygon(33% 0, 100% 0, 100% 100%, 0 100%)" }}
+        />
       </div>
-
-      <motion.img
-        src={lodzSrc}
-        alt=""
-        className="pointer-events-none absolute left-[4%] top-[14%] z-10 w-16 opacity-70 drop-shadow-lg md:left-[6%] md:w-24"
-        style={{ y: y1, rotate: -10 }}
-        initial={{ opacity: 0, scale: 0.85, rotate: -10 }}
-        animate={{ opacity: 0.7, scale: 1, rotate: -10 }}
-        transition={{ duration: 0.9, delay: 0.2 }}
-      />
-      <motion.img
-        src={wodaSrc}
-        alt=""
-        className="pointer-events-none absolute bottom-[18%] left-[5%] z-10 w-20 opacity-65 drop-shadow-lg md:left-[8%] md:w-32"
-        style={{ y: y2, rotate: 6 }}
-        initial={{ opacity: 0, scale: 0.85, rotate: 6 }}
-        animate={{ opacity: 0.65, scale: 1, rotate: 6 }}
-        transition={{ duration: 0.9, delay: 0.35 }}
-      />
-      <motion.img
-        src={palmaSrc}
-        alt=""
-        className="pointer-events-none absolute right-[5%] top-[16%] z-10 w-20 opacity-70 drop-shadow-lg md:right-[8%] md:w-32"
-        style={{ y: y3, rotate: 10 }}
-        initial={{ opacity: 0, scale: 0.85, rotate: 10 }}
-        animate={{ opacity: 0.7, scale: 1, rotate: 10 }}
-        transition={{ duration: 0.9, delay: 0.5 }}
-      />
-      <motion.img
-        src={rybaSrc}
-        alt=""
-        className="pointer-events-none absolute bottom-[20%] right-[6%] z-10 w-[4.5rem] opacity-65 drop-shadow-lg md:right-[9%] md:w-28"
-        style={{ y: y1, rotate: -9 }}
-        initial={{ opacity: 0, scale: 0.85, rotate: -9 }}
-        animate={{ opacity: 0.65, scale: 1, rotate: -9 }}
-        transition={{ duration: 0.9, delay: 0.65 }}
-      />
+      <div className="absolute inset-x-0 bottom-0 h-[24%] bg-[linear-gradient(180deg,rgba(254,254,254,0)_0%,rgba(234,240,251,0.45)_100%)] md:hidden" />
 
       <motion.div
-        className="relative z-10 flex h-full flex-col items-center justify-start px-5 pt-[calc(env(safe-area-inset-top)+5.5rem)] pb-24 text-white md:-translate-y-14 md:justify-center md:px-8 md:pt-0 md:pb-24 lg:-translate-y-8 lg:pb-10"
+        className="relative z-10 flex h-full items-start justify-center px-6 pt-[calc(env(safe-area-inset-top)+4.75rem)] pb-20 md:items-center md:justify-start md:px-10 md:pt-0 lg:px-16"
         style={{ opacity }}
       >
-        <motion.img
-          src={logoSrc}
-          alt="Rejs Fest 26"
-          className="mb-8 w-full max-w-[260px] drop-shadow-2xl [filter:brightness(0)_invert(1)] md:mb-10 md:mt-24 md:max-w-[340px] lg:mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        />
-
         <motion.div
-          className="max-w-4xl space-y-4 text-center md:space-y-5"
+          className="ml-0 flex max-w-3xl flex-col items-center space-y-5 pt-10 text-center md:ml-8 md:items-start md:pt-0 md:text-left lg:ml-14"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h1 className="px-2 text-4xl leading-none font-black tracking-[-0.03em] text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.45)] md:text-7xl">
+          <motion.img
+            src={logoSrc}
+            alt="Rejs Fest 26"
+            className="w-full max-w-[200px] md:hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <motion.img
+            src={desktopLogoSrc}
+            alt="Rejs Fest 26"
+            className="hidden w-full max-w-[300px] md:block"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+
+          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#EAF0FB] px-4 py-3 text-[0.95rem] font-black tracking-[0.14em] text-[#325DA8] uppercase shadow-[0_12px_30px_rgba(50,93,168,0.08)] md:text-base">
+            <span>Białystok</span>
+            <span className="text-[#325DA8]/60">•</span>
+            <span>Sierpień 2026</span>
+          </div>
+
+          <h1 className="max-w-[12ch] text-[3rem] leading-[0.92] font-black tracking-[-0.05em] text-[#21314E] md:max-w-2xl md:text-7xl">
             Doświadczenie młodego Kościoła
           </h1>
-          <p className="text-base font-black tracking-[0.18em] uppercase text-white/90 md:text-lg">
-            29 sierpnia 2026 • 10:00–22:00
-          </p>
-          <p className="mx-auto max-w-2xl px-4 text-base text-white/88 md:text-xl">
+
+          <p className="max-w-[20ch] text-[1.05rem] leading-8 text-[#4E5E7C] md:max-w-2xl md:text-xl">
             Plac przy kościele Niepokalanego Serca Maryi, Dojlidy
           </p>
 
-          <div className="mt-6 flex flex-col items-center justify-center gap-3 md:mt-8 md:flex-row">
+          <div className="mt-4 flex items-center justify-center gap-3">
             <CutoutButton
-              colorClassName="bg-[#F9E926] text-gray-900 shadow-xl hover:bg-white hover:text-[#1F1F1A]"
+              colorClassName="bg-[#325DA8] text-white shadow-[0_16px_40px_rgba(50,93,168,0.24)] hover:bg-[#294C8F]"
               className="px-10 py-3 text-base md:px-14 md:py-4 md:text-lg"
               whileHover={{ scale: 1.05, rotate: -1 }}
             >
@@ -128,7 +111,7 @@ export function HeroSection({
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram Rejs Fest"
-              className="flex h-14 w-14 items-center justify-center bg-white text-[#325DA8] shadow-xl md:h-15 md:w-15"
+              className="flex h-14 w-14 shrink-0 items-center justify-center border border-[#325DA8]/14 bg-white text-[#325DA8] shadow-[0_14px_35px_rgba(33,49,78,0.08)] md:h-15 md:w-15"
               style={{ clipPath: "polygon(12% 0, 100% 8%, 88% 100%, 0 92%)" }}
               whileHover={{ scale: 1.06, rotate: 2 }}
               whileTap={{ scale: 0.96 }}
@@ -136,6 +119,7 @@ export function HeroSection({
               <Instagram className="h-6 w-6" strokeWidth={2.4} />
             </motion.a>
           </div>
+
         </motion.div>
       </motion.div>
     </section>

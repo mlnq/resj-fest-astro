@@ -22,7 +22,6 @@ export function FinalCtaSection({
       className="relative overflow-hidden bg-[radial-gradient(circle_at_center,#5D8EE8_0%,#3F72D0_38%,#2E5BA8_70%,#244988_100%)] px-5 py-20 text-white md:px-6 md:py-18"
     >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22),transparent_42%)]" />
         <div className="absolute left-[-8%] top-[8%] h-40 w-40 rounded-full bg-white/10 blur-3xl md:h-72 md:w-72" />
         <div className="absolute right-[-6%] bottom-[10%] h-48 w-48 rounded-full bg-[#9DA0D0]/20 blur-3xl md:h-80 md:w-80" />
         <img
