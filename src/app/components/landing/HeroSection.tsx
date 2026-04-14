@@ -38,13 +38,10 @@ export function HeroSection({
       ref={heroRef}
       className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#111111]"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={heroBackgroundSrc}
-          alt=""
-          className="h-auto w-full max-w-none object-cover object-center md:h-full md:w-full"
-        />
-      </div>
+      <div
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat md:bg-center"
+        style={{ backgroundImage: `url(${heroBackgroundSrc})` }}
+      />
       <div className="absolute inset-0 bg-black/35" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30" />
       <div className="absolute inset-0">
@@ -89,7 +86,7 @@ export function HeroSection({
       />
 
       <motion.div
-        className="relative z-10 flex h-full -translate-y-8 flex-col items-center justify-center px-5 pt-20 pb-16 text-white md:-translate-y-14 md:px-8 md:pt-0 md:pb-24 lg:-translate-y-8 lg:pb-10"
+        className="relative z-10 flex h-full flex-col items-center justify-start px-5 pt-[calc(env(safe-area-inset-top)+5.5rem)] pb-24 text-white md:-translate-y-14 md:justify-center md:px-8 md:pt-0 md:pb-24 lg:-translate-y-8 lg:pb-10"
         style={{ opacity }}
       >
         <motion.img
