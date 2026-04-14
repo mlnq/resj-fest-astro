@@ -38,10 +38,13 @@ export function HeroSection({
       ref={heroRef}
       className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#111111]"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackgroundSrc})` }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src={heroBackgroundSrc}
+          alt=""
+          className="h-auto w-full max-w-none object-cover object-center md:h-full md:w-full"
+        />
+      </div>
       <div className="absolute inset-0 bg-black/35" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30" />
       <div className="absolute inset-0">
