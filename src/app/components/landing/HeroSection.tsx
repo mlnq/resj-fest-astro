@@ -69,11 +69,11 @@ export function HeroSection({
       <div className="absolute inset-x-0 bottom-0 h-[24%] bg-[linear-gradient(180deg,rgba(254,254,254,0)_0%,rgba(234,240,251,0.45)_100%)] md:hidden" />
 
       <motion.div
-        className="relative z-10 flex h-full items-start justify-center px-6 pt-[calc(env(safe-area-inset-top)+4.75rem)] pb-20 md:items-center md:justify-start md:px-10 md:pt-0 lg:px-16"
+        className="relative z-10 flex h-full items-start justify-center px-6 pt-0 pb-20 md:items-center md:justify-start md:px-10 md:pt-0 lg:px-16"
         style={{ opacity }}
       >
         <motion.div
-          className="ml-0 flex max-w-3xl flex-col items-center space-y-5 pt-10 text-center md:ml-8 md:items-start md:pt-0 md:text-left lg:ml-14"
+          className="ml-0 flex w-full max-w-[22rem] flex-col items-center space-y-5 pt-0 text-center sm:max-w-[30rem] md:ml-8 md:max-w-3xl md:items-start md:pt-0 md:text-left lg:ml-14"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -81,7 +81,7 @@ export function HeroSection({
           <motion.img
             src={logoSrc}
             alt="Rejs Fest 26"
-            className="w-full max-w-[200px] md:hidden"
+            className="mt-[calc(env(safe-area-inset-top)+4rem)] w-full max-w-[200px] sm:max-w-[248px] md:hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -89,34 +89,34 @@ export function HeroSection({
           <motion.img
             src={desktopLogoSrc}
             alt="Rejs Fest 26"
-            className="hidden w-full max-w-[300px] md:block"
+            className="hidden w-full max-w-[300px] md:mt-8 md:block lg:mt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           />
 
-          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] md:text-base">
+          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] sm:px-6 sm:text-[0.94rem] md:text-base">
             <span>Białystok</span>
             <span className="text-[var(--festival-violet-dark)]/70">•</span>
             <span>29 sierpnia 2026</span>
           </div>
 
-          <h1 className="max-w-[12ch] text-[2.45rem] leading-[0.94] font-black tracking-[-0.04em] text-[#21314E] md:max-w-[11ch] md:text-7xl">
-            Budujemy Arkę, w której nie brakuje miejsca.
-          </h1>
+        <h1 className="max-w-[12ch] text-[2.45rem] leading-[1.25] font-black tracking-[-0.04em] text-[#21314E] sm:text-[3.15rem] md:max-w-full md:text-5xl">
+          Budujemy Arkę, <br /> w której nie brakuje miejsca.
+        </h1>
 
-          <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] md:max-w-2xl md:text-xl">
-            <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w
-            Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u
-            nad wodą, a wieczorem <strong>wielki finał z NiemaGotu</strong>.
+          <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] sm:max-w-[28ch] sm:text-[1.08rem] md:max-w-2xl md:text-xl">
+          <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w 
+          Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u 
+          nad wodą, a wieczorem <strong>wielki finał z koncertami</strong>.
           </p>
 
-          <div className="mt-4 flex items-center justify-center gap-3">
+          <div className="mt-4 flex w-full max-w-[22rem] items-center justify-center gap-3 sm:max-w-[28rem] md:w-auto md:max-w-none">
             <CutoutButton
               type="button"
               onClick={handlePrimaryCtaClick}
               colorClassName="bg-[var(--festival-violet)] text-white shadow-[0_16px_40px_rgba(157,160,208,0.3)] hover:bg-[#8689BF]"
-              className="px-8 py-3 text-[0.92rem] md:px-14 md:py-4 md:text-lg"
+              className="flex-1 px-8 py-3 text-[0.92rem] sm:text-[1rem] md:flex-none md:px-14 md:py-4 md:text-lg"
               whileHover={{ scale: 1.05, rotate: -1 }}
             >
               Wchodzę na pokład

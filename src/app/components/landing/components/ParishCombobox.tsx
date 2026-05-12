@@ -30,6 +30,7 @@ export function ParishCombobox({
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const [openDirection, setOpenDirection] = useState<"down" | "up">("down");
   const rootRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const listboxId = useId();
@@ -43,6 +44,25 @@ export function ParishCombobox({
   useEffect(() => {
     if (!isOpen) return;
 
+    const updateOpenDirection = () => {
+      const root = rootRef.current;
+      if (!root) return;
+
+      const rect = root.getBoundingClientRect();
+      const estimatedDropdownHeight = 420;
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+
+      if (spaceBelow < estimatedDropdownHeight && spaceAbove > spaceBelow) {
+        setOpenDirection("up");
+        return;
+      }
+
+      setOpenDirection("down");
+    };
+
+    updateOpenDirection();
+
     const handlePointerDown = (event: MouseEvent) => {
       if (!rootRef.current?.contains(event.target as Node)) {
         setIsOpen(false);
@@ -50,8 +70,14 @@ export function ParishCombobox({
       }
     };
 
+    window.addEventListener("resize", updateOpenDirection);
+    window.addEventListener("scroll", updateOpenDirection, true);
     document.addEventListener("mousedown", handlePointerDown);
-    return () => document.removeEventListener("mousedown", handlePointerDown);
+    return () => {
+      window.removeEventListener("resize", updateOpenDirection);
+      window.removeEventListener("scroll", updateOpenDirection, true);
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -154,7 +180,12 @@ export function ParishCombobox({
 
       {isOpen ? (
         <div
-          className="absolute left-0 right-0 top-[calc(100%+0.65rem)] z-[9999] overflow-hidden rounded-[1.5rem] border border-[#D8D0DF] bg-white shadow-[0_24px_50px_rgba(38,27,54,0.18)]"
+          className={cn(
+            "absolute left-0 right-0 z-[9999] overflow-hidden rounded-[1.5rem] border border-[#D8D0DF] bg-white shadow-[0_24px_50px_rgba(38,27,54,0.18)]",
+            openDirection === "down"
+              ? "top-[calc(100%+0.65rem)]"
+              : "bottom-[calc(100%+0.65rem)]",
+          )}
         >
           <div className="border-b border-[#EEE8F4] px-4 py-3">
             <label className="sr-only" htmlFor={`${listboxId}-search`}>
