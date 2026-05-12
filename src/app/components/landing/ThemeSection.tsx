@@ -11,8 +11,13 @@ type ThemeSectionProps = {
 const themeItems = [
   {
     title: "Przyjaźń",
-    description:
-      "Noe chodził w przyjaźni z Bogiem. Wartość przyjaźni dzisiaj w dobie narcyzmu i samotności.",
+    description: (
+      <p>
+        <strong>Noe nie płynął sam. Ty też nie musisz.</strong> Budujemy
+        wspólnotę, w której można odetchnąć, być sobą i nie zostać{" "}
+        <strong>poza burtą</strong>.
+      </p>
+    ),
     iconBackground: "#F29BBE",
     iconClipPath: "polygon(5% 0, 100% 0, 95% 100%, 0 100%)",
     cardClipPath: "polygon(1% 0, 100% 2%, 99% 100%, 0 98%)",
@@ -22,8 +27,13 @@ const themeItems = [
   },
   {
     title: "Ocalenie",
-    description:
-      "Noe buduje arkę dla ocalenia ludzkości. Bóg przychodzi z ocaleniem, a nie zagładą.",
+    description: (
+      <p>
+        <strong>Czasem życie to potop.</strong> Rejs Fest to przestrzeń, żeby
+        złapać oddech, odzyskać sens i poczuć, że <strong>Bóg ratuje</strong>,
+        a nie ocenia.
+      </p>
+    ),
     iconBackground: "#325DA8",
     iconClipPath: "polygon(0 5%, 95% 0, 100% 95%, 5% 100%)",
     cardClipPath: "polygon(0 1%, 99% 0, 100% 99%, 1% 100%)",
@@ -33,8 +43,13 @@ const themeItems = [
   },
   {
     title: "Przymierze",
-    description:
-      "Pierwsze przymierze Boga z człowiekiem – łuk na niebie jako znak wiecznej obietnicy.",
+    description: (
+      <p>
+        <strong>Nowy start jest możliwy.</strong> To dzień, w którym Bóg składa
+        życie do kupy, daje pokój i odpala <strong>nową energię</strong> na to,
+        co dalej.
+      </p>
+    ),
     iconBackground: "#9DA0D0",
     iconClipPath: "polygon(0 0, 95% 5%, 100% 100%, 5% 95%)",
     cardClipPath: "polygon(2% 0, 100% 1%, 98% 100%, 0 99%)",
@@ -62,8 +77,14 @@ export function ThemeSection({
 
       <div className="relative z-10 mx-auto max-w-5xl">
         <SectionHeading
-          title="POSTAĆ NOEGO"
-          description="Ewangelizacja, doświadczenie młodego Kościoła, integracja i zjednoczenie środowiska białostockiego"
+          title="Dlaczego Rejs Fest"
+          description={
+            <>
+              Plaża, ludzie, muzyka i spotkanie z Bogiem bez sztywnego klimatu.
+              <br />
+              <strong>To rejs, na który serio warto wejść.</strong>
+            </>
+          }
           titleClassName="text-4xl md:text-5xl"
         />
 

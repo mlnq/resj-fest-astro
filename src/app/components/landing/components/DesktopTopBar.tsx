@@ -2,10 +2,8 @@ import { motion, type MotionValue } from "motion/react";
 import type { RefObject } from "react";
 
 const desktopNavItems = [
-  { id: "historia", label: "Historia" },
-  { id: "plan", label: "Plan" },
-  { id: "miejsce", label: "Miejsce" },
-  { id: "zapisy", label: "Zapisy" },
+  { id: "wydarzenie", label: "Wydarzenie" },
+  { id: "zapisy", label: "Pokład" },
 ] as const;
 
 type DesktopTopBarProps = {
@@ -73,7 +71,7 @@ export function DesktopTopBar({
               key={item.id}
               type="button"
               onClick={() => handleNavigate(item.id)}
-              className="relative pb-2 text-xl font-black uppercase tracking-[-0.03em] transition-opacity hover:opacity-65"
+              className="relative pb-2 font-sans text-[0.96rem] font-medium tracking-[0.01em] transition-opacity hover:opacity-65 lg:text-[1rem]"
             >
               {item.label}
               <span

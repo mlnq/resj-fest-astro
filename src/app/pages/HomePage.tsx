@@ -8,33 +8,25 @@ import rybaSvg from "../../assets/imports/ryba.svg";
 import wodaSvg from "../../assets/imports/woda.svg";
 import heroBackground from "../../assets/imports/godzinaZ/0302-041A8268.jpg";
 import { assetUrl } from "../utils/assets";
-import { ArticlesSection } from "../components/landing/ArticlesSection";
 import { FinalCtaSection } from "../components/landing/FinalCtaSection";
-import { GallerySection } from "../components/landing/GallerySection";
 import { HeroSection } from "../components/landing/HeroSection";
-import { InfoHubSection } from "../components/landing/InfoHubSection";
-import { LocationSection } from "../components/landing/LocationSection";
-import { NiemaGotuSection } from "../components/landing/NiemaGotuSection";
-import { ProgramPreviewSection } from "../components/landing/ProgramPreviewSection";
 import { SiteFooter } from "../components/landing/SiteFooter";
 import { ThemeSection } from "../components/landing/ThemeSection";
 import { DesktopTopBar } from "../components/landing/components/DesktopTopBar";
 import { MobilePanelNav } from "../components/landing/components/MobilePanelNav";
 import { NextSectionButton } from "../components/landing/components/NextSectionButton";
 
-const sectionOrder = [
-  "start",
-  "historia",
-  "aktualnosci",
-  "galeria",
-  "plan",
-  "koncert",
-  "miejsce",
-  "info",
-  "zapisy",
-] as const;
+// Tymczasowo zostawiamy na stronie tylko sekcje potrzebne do obecnej publikacji.
+// import { ArticlesSection } from "../components/landing/ArticlesSection";
+// import { GallerySection } from "../components/landing/GallerySection";
+// import { InfoHubSection } from "../components/landing/InfoHubSection";
+// import { LocationSection } from "../components/landing/LocationSection";
+// import { NiemaGotuSection } from "../components/landing/NiemaGotuSection";
+// import { ProgramPreviewSection } from "../components/landing/ProgramPreviewSection";
 
-const navSectionOrder = ["start", "historia", "plan", "miejsce", "zapisy"] as const;
+const sectionOrder = ["start", "wydarzenie", "zapisy"] as const;
+
+const navSectionOrder = ["start", "wydarzenie", "zapisy"] as const;
 
 export function HomePage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -130,7 +122,7 @@ export function HomePage() {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen overflow-y-auto bg-[#FFF9E6] pb-28 md:pb-0"
+      className="paper-grain relative min-h-screen overflow-y-auto bg-[#FFF9E6] pb-24 md:pb-0"
     >
       <DesktopTopBar
         activeSectionId={activeSectionId}
@@ -144,6 +136,7 @@ export function HomePage() {
       <HeroSection
         heroRef={heroRef}
         sectionId="start"
+        primaryCtaTargetId="zapisy"
         logoSrc={assetUrl(logoSvg)}
         desktopLogoSrc={assetUrl(topBarLogoSvg)}
         heroBackgroundSrc={assetUrl(heroBackground)}
@@ -157,17 +150,17 @@ export function HomePage() {
         opacity={opacity}
       />
       <ThemeSection
-        sectionId="historia"
+        sectionId="wydarzenie"
         lodzSrc={assetUrl(lodzSvg)}
         rybaSrc={assetUrl(rybaSvg)}
         wodaSrc={assetUrl(wodaSvg)}
       />
-      <ArticlesSection sectionId="aktualnosci" />
-      <GallerySection sectionId="galeria" />
-      <ProgramPreviewSection sectionId="plan" />
-      <NiemaGotuSection sectionId="koncert" />
-      <LocationSection sectionId="miejsce" />
-      <InfoHubSection sectionId="info" />
+      {/* <ArticlesSection sectionId="aktualnosci" /> */}
+      {/* <GallerySection sectionId="galeria" /> */}
+      {/* <ProgramPreviewSection sectionId="plan" /> */}
+      {/* <NiemaGotuSection sectionId="koncert" /> */}
+      {/* <LocationSection sectionId="miejsce" /> */}
+      {/* <InfoHubSection sectionId="info" /> */}
       <FinalCtaSection
         sectionId="zapisy"
         palmaSrc={assetUrl(palmaSvg)}

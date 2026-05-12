@@ -6,6 +6,7 @@ import { CutoutButton } from "./components/CutoutButton";
 type HeroSectionProps = {
   heroRef: RefObject<HTMLElement | null>;
   sectionId?: string;
+  primaryCtaTargetId?: string;
   logoSrc: string;
   desktopLogoSrc: string;
   heroBackgroundSrc: string;
@@ -22,6 +23,7 @@ type HeroSectionProps = {
 export function HeroSection({
   heroRef,
   sectionId,
+  primaryCtaTargetId,
   logoSrc,
   desktopLogoSrc,
   heroBackgroundSrc,
@@ -34,6 +36,16 @@ export function HeroSection({
   y3: _y3,
   opacity,
 }: HeroSectionProps) {
+  const handlePrimaryCtaClick = () => {
+    if (!primaryCtaTargetId) return;
+
+    const element = document.getElementById(primaryCtaTargetId);
+    if (!element) return;
+
+    const targetTop = element.getBoundingClientRect().top + window.scrollY - 24;
+    window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
+  };
+
   return (
     <section
       id={sectionId}
@@ -83,27 +95,31 @@ export function HeroSection({
             transition={{ duration: 0.8 }}
           />
 
-          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.95rem] font-black tracking-[0.14em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] md:text-base">
+          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] md:text-base">
             <span>Białystok</span>
             <span className="text-[var(--festival-violet-dark)]/70">•</span>
-            <span>Sierpień 2026</span>
+            <span>29 sierpnia 2026</span>
           </div>
 
-          <h1 className="max-w-[12ch] text-[3rem] leading-[0.92] font-black tracking-[-0.05em] text-[#21314E] md:max-w-2xl md:text-7xl">
-            Doświadczenie młodego Kościoła
+          <h1 className="max-w-[12ch] text-[2.45rem] leading-[0.94] font-black tracking-[-0.04em] text-[#21314E] md:max-w-[11ch] md:text-7xl">
+            Budujemy Arkę, w której nie brakuje miejsca.
           </h1>
 
-          <p className="max-w-[20ch] text-[1.05rem] leading-8 text-[#4E5E7C] md:max-w-2xl md:text-xl">
-            Plac przy kościele Niepokalanego Serca Maryi, Dojlidy
+          <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] md:max-w-2xl md:text-xl">
+            <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w
+            Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u
+            nad wodą, a wieczorem <strong>wielki finał z NiemaGotu</strong>.
           </p>
 
           <div className="mt-4 flex items-center justify-center gap-3">
             <CutoutButton
+              type="button"
+              onClick={handlePrimaryCtaClick}
               colorClassName="bg-[var(--festival-violet)] text-white shadow-[0_16px_40px_rgba(157,160,208,0.3)] hover:bg-[#8689BF]"
-              className="px-10 py-3 text-base md:px-14 md:py-4 md:text-lg"
+              className="px-8 py-3 text-[0.92rem] md:px-14 md:py-4 md:text-lg"
               whileHover={{ scale: 1.05, rotate: -1 }}
             >
-              Zapisz się
+              Wchodzę na pokład
             </CutoutButton>
 
             <motion.a

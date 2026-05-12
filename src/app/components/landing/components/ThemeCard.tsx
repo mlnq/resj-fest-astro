@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
+import type { ReactNode } from "react";
 
 type ThemeCardProps = {
   title: string;
-  description: string;
+  description: ReactNode;
   iconSrc: string;
   iconBackground: string;
   iconClipPath: string;
@@ -42,7 +43,7 @@ export function ThemeCard({
         <img src={iconSrc} alt="" className="h-12 w-12 md:h-14 md:w-14" />
       </div>
       <h3 className="text-xl font-bold text-gray-900 md:text-2xl">{title}</h3>
-      <p className="px-2 text-sm text-gray-700 md:text-base">{description}</p>
+      <div className="px-2 text-sm text-gray-700 md:text-base">{description}</div>
     </motion.div>
   );
 }

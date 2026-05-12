@@ -2,6 +2,7 @@
 
 :root {
   --font-size: 16px;
+  --font-sans-clean: "Inter", "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --background: #ffffff;
   --festival-blue: #325da8;
   --festival-blue-dark: #244988;
@@ -87,6 +88,7 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-sans-clean);
   --color-background: var(--background);
   --color-festival-blue: var(--festival-blue);
   --color-festival-blue-dark: var(--festival-blue-dark);
@@ -142,6 +144,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans-clean);
   }
 
   button,
@@ -149,6 +152,13 @@
   a[href],
   summary {
     cursor: pointer;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
   }
 
   /**
@@ -200,5 +210,23 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .paper-grain {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.26) 0 1px, transparent 1.2px),
+      radial-gradient(circle at 80% 30%, rgba(69, 51, 94, 0.06) 0 1px, transparent 1.3px),
+      radial-gradient(circle at 30% 75%, rgba(69, 51, 94, 0.05) 0 0.9px, transparent 1.1px),
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.06) 0,
+        rgba(255, 255, 255, 0.06) 1px,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0) 4px
+      );
+    background-size: 160px 160px, 210px 210px, 190px 190px, 100% 100%;
+    background-repeat: repeat;
   }
 }
