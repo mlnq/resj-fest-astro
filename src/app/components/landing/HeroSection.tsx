@@ -52,6 +52,7 @@ export function HeroSection({
       ref={heroRef}
       className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#FEFEFE]"
     >
+      {/* Background & Overlays */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(157,160,208,0.18),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(76,81,133,0.1),transparent_32%)]" />
       <div className="absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden md:block">
         <div
@@ -68,6 +69,7 @@ export function HeroSection({
       </div>
       <div className="absolute inset-x-0 bottom-0 h-[24%] bg-[linear-gradient(180deg,rgba(254,254,254,0)_0%,rgba(234,240,251,0.45)_100%)] md:hidden" />
 
+      {/* Main Content Container */}
       <motion.div
         className="relative z-10 flex h-full items-start justify-center px-6 pt-0 pb-20 md:items-center md:justify-start md:px-10 md:pt-0 lg:px-16"
         style={{ opacity }}
@@ -78,6 +80,7 @@ export function HeroSection({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
+          {/* Logo Section */}
           <motion.img
             src={logoSrc}
             alt="Rejs Fest 26"
@@ -95,22 +98,31 @@ export function HeroSection({
             transition={{ duration: 0.8 }}
           />
 
+          {/* Date Tag */}
           <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] sm:px-6 sm:text-[0.94rem] md:text-base">
             <span>Białystok</span>
             <span className="text-[var(--festival-violet-dark)]/70">•</span>
             <span>29 sierpnia 2026</span>
           </div>
 
-        <h1 className="max-w-[12ch] text-[2.45rem] leading-[1.25] font-black tracking-[-0.04em] text-[#21314E] sm:text-[3.15rem] md:max-w-full md:text-5xl">
-          Budujemy Arkę, <br /> w której nie brakuje miejsca.
-        </h1>
+          {/* Headline */}
+          <h1 className="max-w-[15ch] text-[2.45rem] leading-[1.1] font-black tracking-[-0.04em] text-[#21314E] sm:text-[3.15rem] md:max-w-full md:text-5xl lg:text-6xl">
+            Budujemy Arkę, <br /> w której nikomu nie zabraknie miejsca.
+          </h1>
 
-          <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] sm:max-w-[28ch] sm:text-[1.08rem] md:max-w-2xl md:text-xl">
-          <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w 
-          Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u 
-          nad wodą, a wieczorem <strong>wielki finał z koncertami</strong>.
-          </p>
+          {/* Subtext Section */}
+          <div className="space-y-4">
+            <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] sm:max-w-[28ch] sm:text-[1.08rem] md:max-w-2xl md:text-xl">
+              <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w 
+              Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u 
+              nad wodą, a wieczorem <strong>wielki finał z koncertami</strong>.
+            </p>
+            <p className="text-[1.15rem] font-bold text-[var(--festival-violet-dark)] md:text-2xl">
+              Nie może Cię tam zabraknąć!
+            </p>
+          </div>
 
+          {/* CTA Buttons */}
           <div className="mt-4 flex w-full max-w-[22rem] items-center justify-center gap-3 sm:max-w-[28rem] md:w-auto md:max-w-none">
             <CutoutButton
               type="button"
@@ -138,7 +150,6 @@ export function HeroSection({
               <Instagram className="h-6 w-6" strokeWidth={2.4} />
             </motion.a>
           </div>
-
         </motion.div>
       </motion.div>
     </section>
