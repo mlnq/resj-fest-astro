@@ -122,7 +122,7 @@ export function HomePage() {
   return (
     <div
       ref={containerRef}
-      className="paper-grain relative min-h-screen overflow-y-auto bg-[#FFF9E6] pb-24 md:pb-0"
+      className="paper-grain relative min-h-screen overflow-y-auto bg-white pb-24 md:pb-0"
     >
       <DesktopTopBar
         activeSectionId={activeSectionId}

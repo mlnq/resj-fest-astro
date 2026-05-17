@@ -13,9 +13,8 @@ const themeItems = [
     title: "Przyjaźń",
     description: (
       <p>
-        <strong>Noe nie płynął sam. Ty też nie musisz.</strong> Budujemy
-        wspólnotę, w której można odetchnąć, być sobą i nie zostać{" "}
-        <strong>poza burtą</strong>.
+        Nie musisz nic udawać. Wpadasz do ludzi, przy których możesz być sobą i
+        po prostu dobrze się czuć.
       </p>
     ),
     iconBackground: "#F29BBE",
@@ -29,9 +28,8 @@ const themeItems = [
     title: "Ocalenie",
     description: (
       <p>
-        <strong>Czasem życie to potop.</strong> Rejs Fest to przestrzeń, żeby
-        złapać oddech, odzyskać sens i poczuć, że <strong>Bóg ratuje</strong>,
-        a nie ocenia.
+        Masz dość pędu, presji i ocen? Tutaj łapiesz oddech, zwalniasz i
+        wracasz do wewnętrznego spokoju.
       </p>
     ),
     iconBackground: "#325DA8",
@@ -42,12 +40,11 @@ const themeItems = [
     imageKey: "rybaSrc",
   },
   {
-    title: "Przymierze",
+    title: "Nowy start",
     description: (
       <p>
-        <strong>Nowy start jest możliwy.</strong> To dzień, w którym Bóg składa
-        życie do kupy, daje pokój i odpala <strong>nową energię</strong> na to,
-        co dalej.
+        Bóg nie patrzy na Ciebie przez pryzmat potknięć. Daje czystą kartę,
+        nową siłę i światło na to, co dalej.
       </p>
     ),
     iconBackground: "#9DA0D0",
@@ -80,9 +77,9 @@ export function ThemeSection({
           title="Dlaczego Rejs Fest"
           description={
             <>
-              Plaża, ludzie, muzyka i spotkanie z Bogiem bez sztywnego klimatu.
+              Relacje, oddech i spotkanie z Bogiem bez sztywnego klimatu.
               <br />
-              <strong>To rejs, na który serio warto wejść.</strong>
+              <strong>To dzień, który naprawdę może coś poukładać.</strong>
             </>
           }
           titleClassName="text-4xl md:text-5xl"

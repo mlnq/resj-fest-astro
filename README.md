@@ -100,3 +100,10 @@ Wynik buildu trafia do katalogu `dist/`.
 
 - Projekt nie ma obecnie wydzielonych testów automatycznych ani osobnego skryptu lintowania w `package.json`.
 - Jeśli dodajesz nową podstronę, najprościej zacząć od nowego pliku `.astro` w `src/pages` i podpiąć do niego odpowiedni komponent React lub czysty widok Astro.
+
+## Zapisy
+
+Formularz zapisów jest przygotowany pod zewnętrzny webhook i może działać bez zmiany hostingu z `GitHub Pages`.
+
+- Front używa zmiennej `PUBLIC_REGISTRATION_WEBHOOK_URL`.
+- Przykładowe wdrożenie z `Google Sheets + Google Apps Script + Gmail` jest opisane w [docs/google-apps-script-zapisy.md](./docs/google-apps-script-zapisy.md).

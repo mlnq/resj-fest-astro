@@ -1,0 +1,8 @@
+---
+import { HomePage } from "../app/pages/HomePage.tsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Rejs Fest 26">
+	<HomePage client:only="react" />
+</Layout>

@@ -1,0 +1,92 @@
+{
+  "project": {
+    "name": "Rejs Fest 2026",
+    "type": "landing-page-copy-contract",
+    "language": "pl-PL"
+  },
+  "event": {
+    "name": "Rejs Fest 2026",
+    "city": "Białystok",
+    "venue": "Parafia NSM na Dojlidach",
+    "date": "2026-08-29",
+    "ticket_price_pln": 50
+  },
+  "audience": {
+    "primary": "młodzież 16+ oraz młodzi dorośli",
+    "mindset": [
+      "szukają dobrego czasu i ludzi",
+      "nie chcą moralizowania ani patosu",
+      "są wyczuleni na sztuczny, kościelny język",
+      "cenią autentyczność, wspólnotę i konkrety"
+    ]
+  },
+  "brand_core": {
+    "main_motif": "Arka jako bezpieczne miejsce, schronienie, wspólnota i powrót do Boga",
+    "tone": [
+      "dynamiczny",
+      "autentyczny",
+      "nowoczesny",
+      "prosty",
+      "emocjonalny bez przesady"
+    ],
+    "must_avoid": [
+      "kościelny patos",
+      "sztywny język",
+      "mentorski ton",
+      "żeglarskie i sportowo-wodne metafory",
+      "przesadna poetyckość",
+      "marketingowy nadmuch"
+    ]
+  },
+  "non_negotiables": [
+    "Motyw Arki zostaje.",
+    "Nie używaj odniesień do sportów żeglarskich, regat, żagli, steru, kotwicy, pokładu ani burty jako głównego języka marki.",
+    "Bóg ma być żywo obecny w komunikacji, ale bez kościelnego słownika i patosu.",
+    "Copy ma być czytelne na mobile: krótkie zdania, szybki skan, mocne korzyści.",
+    "Najważniejsze korzyści: relacje, pokój, muzyka, spotkanie z Bogiem, nowa energia.",
+    "Cena uczestnictwa: 50 zł."
+  ],
+  "approved_core_copy": {
+    "hero_headline": "Budujemy Arkę, w której nikomu nie braknie miejsca.",
+    "hero_subheadline": "Przyjdź po relacje, pokój i muzykę. Wyjdziesz z czymś dużo większym.",
+    "hero_meta": "29 sierpnia, Białystok (Parafia NSM na Dojlidach).",
+    "primary_cta": "Chcę tam być"
+  },
+  "approved_cards": [
+    {
+      "title": "Przyjaźń",
+      "body": "Nie musisz nic udawać. Wpadasz do ludzi, przy których możesz być sobą i po prostu dobrze się czuć."
+    },
+    {
+      "title": "Ocalenie",
+      "body": "Masz dość pędu, presji i ocen? Tutaj łapiesz oddech, zwalniasz i wracasz do wewnętrznego spokoju."
+    },
+    {
+      "title": "Nowy start",
+      "body": "Bóg nie patrzy na Ciebie przez pryzmat potknięć. Daje czystą kartę, nową siłę i światło na to, co dalej."
+    }
+  ],
+  "approved_pre_form_section": {
+    "heading": "Co czeka na Ciebie w Arce?",
+    "agenda": [
+      "Popołudnie pełne relacji, rozmów i przestrzeni, żeby po prostu pobyć razem.",
+      "Strefy chillu i spotkania z ludźmi, którzy mają coś prawdziwego do powiedzenia.",
+      "Czas modlitwy i moment, żeby zatrzymać się przy Bogu bez presji.",
+      "Wieczorny finał: koncerty, wspólne śpiewanie i mocny klimat do końca dnia."
+    ],
+    "microcopy": "Koszt udziału to 50 zł (zapis zajmie Ci mniej niż minutę)."
+  },
+  "output_rules": {
+    "mobile_first": true,
+    "short_sentences": true,
+    "benefit_led": true,
+    "concrete_over_abstract": true,
+    "allowed_emotional_register": "ciepły, energiczny, prawdziwy",
+    "forbidden_patterns": [
+      "patetyczne wezwania",
+      "zbyt długie akapity",
+      "nadużywanie wykrzykników",
+      "frazy w stylu: zapraszamy serdecznie, wyjątkowe wydarzenie duchowe, przeżyj niezapomniane chwile"
+    ]
+  }
+}

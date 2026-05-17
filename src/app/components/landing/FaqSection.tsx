@@ -20,7 +20,7 @@ const faqItems = [
   {
     question: "Czy wydarzenie jest płatne?",
     answer:
-      "Na ten moment zakładamy bezpłatny udział. Jeśli pojawi się osobna strefa z zapisami lub ograniczona pula wejść, damy znać z wyprzedzeniem.",
+      "Tak. Udział kosztuje 59 zł, a po rejestracji wyślemy mail zwrotny z danymi do przelewu.",
   },
   {
     question: "Czy na miejscu będzie jedzenie i woda?",

@@ -5,7 +5,6 @@ import {
   Music2,
   Youtube,
 } from "lucide-react";
-import packageJson from "../../../../package.json";
 import { withBasePath } from "../../utils/assets";
 
 const socialLinks = [
@@ -69,10 +68,6 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="space-y-2 text-center text-sm font-medium leading-relaxed text-[#4E5E7C] md:max-w-[260px] md:text-right">
-            <p>Projekt i realizacja: Michał M</p>
-            <p>Wersja apki: v{packageJson.version}</p>
-          </div>
         </div>
       </div>
     </footer>

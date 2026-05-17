@@ -40,7 +40,7 @@ export function LocationSection({ sectionId }: LocationSectionProps) {
             <MapPin className="mb-5 h-12 w-12 text-white md:h-9 md:w-9" strokeWidth={2.2} />
 
             <h3 className="mb-4 text-3xl font-black tracking-[-0.03em] text-white md:text-[1.95rem]">
-              Dojlidy przy plaży
+              Parafia NSM na Dojlidach
             </h3>
 
             <p className="max-w-lg text-lg leading-[1.3] text-[#D6DCEF] md:text-[1.25rem]">

@@ -1,0 +1,28 @@
+import { c as createComponent } from './astro-component_ZE8m3R01.mjs';
+import 'piccolore';
+import { k as renderComponent, r as renderTemplate, m as maybeRenderHead } from './ssr-function_jF5HkSbN.mjs';
+import { $ as $$Layout } from './Layout_4HNKoiHF.mjs';
+
+const $$OrganizatorzyIPartnerzy = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Organizatorzy I Partnerzy | Rejs Fest 26" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<main class="min-h-screen bg-[#FFF9E6] px-5 py-16 text-[#1F2535] md:px-8 md:py-24"> <div class="mx-auto max-w-5xl"> <h1 class="font-rejsfest text-4xl uppercase tracking-[0.04em] md:text-5xl">
+Organizatorzy I Partnerzy
+</h1> <section class="mt-12 grid gap-6 md:grid-cols-2"> <article class="bg-white p-8 shadow-[0_14px_34px_rgba(28,33,52,0.08)]" style="clip-path:polygon(1% 0,100% 1%,99% 100%,0 99%)"> <h2 class="mb-4 text-2xl font-black tracking-[-0.03em]">Organizatorzy</h2> <p class="text-[1rem] leading-8 text-[#5E6472]">
+Tutaj możesz dodać dokładną nazwę wspólnoty, parafii, fundacji lub zespołu odpowiedzialnego za Rejs Fest oraz krótki opis kto stoi za wydarzeniem.
+</p> </article> <article class="bg-white p-8 shadow-[0_14px_34px_rgba(28,33,52,0.08)]" style="clip-path:polygon(1% 0,100% 1%,99% 100%,0 99%)"> <h2 class="mb-4 text-2xl font-black tracking-[-0.03em]">Partnerzy I Sponsorzy</h2> <p class="text-[1rem] leading-8 text-[#5E6472]">
+To miejsce na logotypy, patronów medialnych, sponsorów oraz partnerów wspierających wydarzenie.
+</p> </article> </section> <section class="mt-10 bg-[#F0F1FA] p-8 shadow-[0_14px_34px_rgba(102,106,155,0.12)]" style="clip-path:polygon(1% 0,100% 1%,99% 100%,0 99%)"> <h2 class="mb-4 text-2xl font-black tracking-[-0.03em]">Kontakt Organizacyjny</h2> <div class="space-y-3 text-[1rem] leading-7 text-[#40506C]"> <p>Telefon: <a href="tel:123444121" class="font-bold text-[var(--festival-violet)] hover:underline">123444121</a></p> <p>Email: <a href="mailto:rejsfest@gmail.com" class="font-bold text-[var(--festival-violet)] hover:underline">rejsfest@gmail.com</a></p> <p>Instagram: <a href="https://www.instagram.com/rejsfest" target="_blank" rel="noreferrer" class="font-bold text-[var(--festival-violet)] hover:underline">@rejsfest</a></p> </div> </section> </div> </main> ` })}`;
+}, "/Users/mlenqe/Desktop/RejsFestAstro/rejs-fest-astro/src/pages/organizatorzy-i-partnerzy.astro", void 0);
+
+const $$file = "/Users/mlenqe/Desktop/RejsFestAstro/rejs-fest-astro/src/pages/organizatorzy-i-partnerzy.astro";
+const $$url = "/organizatorzy-i-partnerzy";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$OrganizatorzyIPartnerzy,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

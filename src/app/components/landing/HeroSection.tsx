@@ -98,57 +98,62 @@ export function HeroSection({
             transition={{ duration: 0.8 }}
           />
 
-          {/* Date Tag */}
-          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] sm:px-6 sm:text-[0.94rem] md:text-base">
-            <span>Białystok</span>
-            <span className="text-[var(--festival-violet-dark)]/70">•</span>
-            <span>29 sierpnia 2026</span>
+          {/* Eyebrow */}
+          <div className="space-y-2 text-center md:text-left">
+            <div className="inline-flex bg-[#ECEAF7] px-4 py-3 text-[0.82rem] font-black tracking-[0.12em] text-[var(--festival-violet-dark)] uppercase shadow-[0_12px_30px_rgba(45,53,74,0.12)] sm:px-6 sm:text-[0.94rem] md:text-base">
+              29 sierpnia • NSM Dojlidy • Białystok{" "}
+            </div>
+            <p className="text-[0.78rem] font-bold tracking-[0.1em] text-[#5E6472] uppercase sm:text-[0.84rem] md:text-[0.9rem]"></p>
           </div>
 
           {/* Headline */}
           <h1 className="max-w-[15ch] text-[2.45rem] leading-[1.1] font-black tracking-[-0.04em] text-[#21314E] sm:text-[3.15rem] md:max-w-full md:text-5xl lg:text-6xl">
-            Budujemy Arkę, <br /> w której nikomu nie zabraknie miejsca.
+            Budujemy Arkę,
+            <br />w której możesz po prostu odetchnąć.
           </h1>
 
           {/* Subtext Section */}
-          <div className="space-y-4">
-            <p className="max-w-[24ch] text-[0.96rem] leading-7 text-[#4E5E7C] sm:max-w-[28ch] sm:text-[1.08rem] md:max-w-2xl md:text-xl">
-              <strong>29 sierpnia</strong> widzimy się na <strong>Plaży Dojlidy w 
-              Białymstoku</strong>. Dzień relacji, modlitwy i letniego vibe&apos;u 
-              nad wodą, a wieczorem <strong>wielki finał z koncertami</strong>.
-            </p>
-            <p className="text-[1.15rem] font-bold text-[var(--festival-violet-dark)] md:text-2xl">
-              Nie może Cię tam zabraknąć!
+          <div className="space-y-3">
+            <p className="max-w-[24ch] text-[0.98rem] leading-7 text-[#4E5E7C] sm:max-w-[28ch] sm:text-[1.08rem] md:max-w-2xl md:text-xl">
+              Muzyka, ludzie i przestrzeń bez ocen.
+              <br className="hidden sm:block" />
+              Jeden dzień, który zostaje z Tobą na dłużej.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="mt-4 flex w-full max-w-[22rem] items-center justify-center gap-3 sm:max-w-[28rem] md:w-auto md:max-w-none">
-            <CutoutButton
-              type="button"
-              onClick={handlePrimaryCtaClick}
-              colorClassName="bg-[var(--festival-violet)] text-white shadow-[0_16px_40px_rgba(157,160,208,0.3)] hover:bg-[#8689BF]"
-              className="flex-1 px-8 py-3 text-[0.92rem] sm:text-[1rem] md:flex-none md:px-14 md:py-4 md:text-lg"
-              whileHover={{ scale: 1.05, rotate: -1 }}
-            >
-              Wchodzę na pokład
-            </CutoutButton>
+          <div className="mt-4 flex w-full max-w-[22rem] flex-col items-center gap-3 sm:max-w-[28rem] md:w-auto md:max-w-none md:items-start">
+            <div className="flex w-full items-center justify-center gap-3 md:w-auto md:justify-start">
+              <CutoutButton
+                type="button"
+                onClick={handlePrimaryCtaClick}
+                colorClassName="bg-[#F9E926] text-[#21314E] shadow-[0_18px_40px_rgba(121,109,8,0.22)] hover:bg-[#F3E000]"
+                className="flex-1 px-8 py-3 text-[0.92rem] sm:text-[1rem] md:flex-none md:px-14 md:py-4 md:text-lg"
+                whileHover={{ scale: 1.05, rotate: -1 }}
+              >
+                Chcę tam być →
+              </CutoutButton>
 
-            <motion.a
-              href="https://www.instagram.com/rejsfest"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram Rejs Fest"
-              className="flex h-14 w-14 shrink-0 items-center justify-center border bg-white text-[var(--festival-violet)] shadow-[0_14px_35px_rgba(76,81,133,0.12)] md:h-15 md:w-15"
-              style={{
-                clipPath: "polygon(12% 0, 100% 8%, 88% 100%, 0 92%)",
-                borderColor: "rgba(157,160,208,0.28)",
-              }}
-              whileHover={{ scale: 1.06, rotate: 2 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              <Instagram className="h-6 w-6" strokeWidth={2.4} />
-            </motion.a>
+              <motion.a
+                href="https://www.instagram.com/rejsfest"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Rejs Fest"
+                className="flex h-14 w-14 shrink-0 items-center justify-center border bg-white text-[var(--festival-violet)] shadow-[0_14px_35px_rgba(76,81,133,0.12)] md:h-15 md:w-15"
+                style={{
+                  clipPath: "polygon(12% 0, 100% 8%, 88% 100%, 0 92%)",
+                  borderColor: "rgba(157,160,208,0.28)",
+                }}
+                whileHover={{ scale: 1.06, rotate: 2 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <Instagram className="h-6 w-6" strokeWidth={2.4} />
+              </motion.a>
+            </div>
+
+            <p className="text-[0.82rem] font-semibold tracking-[0.01em] text-[#5E6472] sm:text-[0.88rem] md:text-[0.92rem]">
+              50 zł • zapis zajmie mniej niż minutę
+            </p>
           </div>
         </motion.div>
       </motion.div>

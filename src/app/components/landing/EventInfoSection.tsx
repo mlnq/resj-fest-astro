@@ -26,7 +26,7 @@ const infoItems = [
   {
     title: "Koszt",
     description:
-      "Wstęp na wydarzenie jest bezpłatny. Jeśli pojawią się zapisy na wybrane strefy lub pakiety, poinformujemy o tym z wyprzedzeniem.",
+      "Udział w wydarzeniu kosztuje 59 zł. Po rejestracji uczestnik dostanie w mailu zwrotnym dane do przelewu.",
     icon: Banknote,
     accent: "#F9E926",
   },
