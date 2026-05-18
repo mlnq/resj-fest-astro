@@ -10,7 +10,7 @@ Tworzysz copy dla Rejs Fest 2026: młodzieżowego festiwalu katolickiego w Biał
 - Nazwa wydarzenia: Rejs Fest 2026
 - Data: 29 sierpnia 2026
 - Miejsce: Białystok, Parafia NSM na Dojlidach
-- Cena: 50 zł
+- Cena: 59 zł
 
 ## Brand Frame
 - Główny motyw: Arka jako bezpieczne miejsce, wspólnota, schronienie, ratunek i powrót do Boga.
@@ -42,7 +42,7 @@ Tworzysz copy dla Rejs Fest 2026: młodzieżowego festiwalu katolickiego w Biał
   - Strefy chillu i spotkania z ludźmi, którzy mają coś prawdziwego do powiedzenia.
   - Czas modlitwy i moment, żeby zatrzymać się przy Bogu bez presji.
   - Wieczorny finał: koncerty, wspólne śpiewanie i mocny klimat do końca dnia.
-- Microcopy: "Koszt udziału to 50 zł (zapis zajmie Ci mniej niż minutę)."
+- Microcopy: "Koszt udziału to 59 zł (zapis zajmie Ci mniej niż minutę)."
 
 ## Output Requirements
 - Pisz po polsku.

@@ -1,8 +1,15 @@
 import type { APIRoute } from 'astro';
+import { TICKET_PRICE } from "../../config/event";
 
 const SHEET_NAME = "RejsFestZapisy";
 const ORGANIZER_EMAIL = "rejsfest@gmail.com";
 const REPLY_TO = "rejsfest@gmail.com";
+const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    url: "https://www.instagram.com/rejsfest",
+  },
+] as const;
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -10,17 +17,22 @@ export const POST: APIRoute = async ({ request }) => {
 
     const payload = {
       ...input,
+      ticketPrice: input.ticketPrice || TICKET_PRICE,
       eventName: "Rejs Fest 2026",
       eventDate: "29 sierpnia 2026",
       eventLocation: "Białystok, Parafia NSM na Dojlidach",
       organizerInbox: ORGANIZER_EMAIL,
+      socialLinks: SOCIAL_LINKS,
       submittedAt: new Date().toISOString(),
     };
 
-    const webhookUrl = import.meta.env.REGISTRATION_WEBHOOK_URL;
+    const webhookUrl = import.meta.env.PUBLIC_REGISTRATION_WEBHOOK_URL;
 
     if (!webhookUrl) {
-      return new Response(JSON.stringify({ ok: false, message: "Brak REGISTRATION_WEBHOOK_URL" }), {
+      return new Response(JSON.stringify({
+        ok: false,
+        message: "Brak PUBLIC_REGISTRATION_WEBHOOK_URL"
+      }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
       });

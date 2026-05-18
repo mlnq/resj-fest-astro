@@ -9,7 +9,7 @@ Jesteś doświadczonym UX Writerem i Copywriterem od landing page'y eventowych d
 - Nazwa: Rejs Fest 2026
 - Data: 29 sierpnia 2026
 - Miejsce: Białystok, Parafia NSM na Dojlidach
-- Cena: 50 zł
+- Cena: 59 zł
 
 ## Tożsamość marki
 - Główny motyw: Arka jako schronienie, wspólnota, ratunek i powrót do Boga.
@@ -46,7 +46,7 @@ Jesteś doświadczonym UX Writerem i Copywriterem od landing page'y eventowych d
   - Strefy chillu i spotkania z ludźmi, którzy mają coś prawdziwego do powiedzenia.
   - Czas modlitwy i moment, żeby zatrzymać się przy Bogu bez presji.
   - Wieczorny finał: koncerty, wspólne śpiewanie i mocny klimat do końca dnia.
-- Microcopy: "Koszt udziału to 50 zł (zapis zajmie Ci mniej niż minutę)."
+- Microcopy: "Koszt udziału to 59 zł (zapis zajmie Ci mniej niż minutę)."
 
 ## Sposób pracy
 - Gdy tworzysz nowe warianty, nie zmieniaj rdzenia marki.

@@ -22,79 +22,117 @@ Przykładowe wartości:
 W arkuszu wejdź w `Extensions` -> `Apps Script` i wklej:
 
 ```javascript
-const SHEET_NAME = "Arkusz1";
+const SHEET_NAME = "RejsFestZapisy";
 const ORGANIZER_EMAIL = "rejsfest@gmail.com";
 const REPLY_TO = "rejsfest@gmail.com";
+const DEFAULT_TICKET_PRICE = "59 zł";
+const SOCIAL_LINKS = [
+  { label: "Instagram", url: "https://www.instagram.com/rejsfest" },
+];
 
-function doGet(e) {
+function doPost(e) {
   try {
-    if (!e || !e.parameter || !e.parameter.data) {
-      return ContentService
-        .createTextOutput(JSON.stringify({ ok: false, error: "Brak parametru data." }))
-        .setMimeType(ContentService.MimeType.JSON);
+    Logger.log("POST received");
+
+    if (!e || !e.postData || !e.postData.contents) {
+      throw new Error("Brak payloadu POST.");
     }
 
-    const payload = JSON.parse(e.parameter.data);
+    const payload = JSON.parse(e.postData.contents);
+    Logger.log("Payload: " + JSON.stringify(payload));
+
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-
-    if (!sheet) {
-      throw new Error("Nie znaleziono zakładki arkusza: " + SHEET_NAME);
-    }
+    if (!sheet) throw new Error("Nie znaleziono zakładki: " + SHEET_NAME);
 
     sheet.appendRow([
       new Date(),
       payload.fullName || "",
       payload.email || "",
       payload.birthDate || "",
-      payload.ticketPrice || "50 zł",
+      payload.ticketPrice || DEFAULT_TICKET_PRICE,
       "nowy",
       ORGANIZER_EMAIL,
     ]);
 
-    const organizerSubject = "Nowe zgłoszenie - Rejs Fest 2026";
-    const organizerBody =
-      "Nowe zgłoszenie:\n\n" +
-      "Imię i nazwisko: " + (payload.fullName || "") + "\n" +
-      "E-mail: " + (payload.email || "") + "\n" +
-      "Data urodzenia: " + (payload.birthDate || "") + "\n" +
-      "Cena: " + (payload.ticketPrice || "50 zł") + "\n";
-
     MailApp.sendEmail({
       to: ORGANIZER_EMAIL,
-      subject: organizerSubject,
-      body: organizerBody,
+      subject: "Nowe zgłoszenie - Rejs Fest 2026",
+      body:
+        "Nowe zgłoszenie:\n\n" +
+        "Imię i nazwisko: " + (payload.fullName || "") + "\n" +
+        "E-mail: " + (payload.email || "") + "\n" +
+        "Data urodzenia: " + (payload.birthDate || "") + "\n" +
+        "Cena: " + (payload.ticketPrice || DEFAULT_TICKET_PRICE) + "\n",
       replyTo: payload.email || REPLY_TO,
     });
 
-    const participantSubject = "Rejs Fest 2026 - potwierdzenie zapisu";
-    const participantBody =
-      "Hej!\n\n" +
-      "Dzięki za zapis na Rejs Fest 2026.\n" +
-      "Twoje zgłoszenie zostało przyjęte.\n\n" +
-      "Data: 29 sierpnia 2026\n" +
-      "Miejsce: Białystok, Parafia NSM na Dojlidach\n" +
-      "Koszt udziału: 50 zł\n\n" +
-      "Dane do przelewu:\n" +
-      "Odbiorca: [uzupełnij]\n" +
-      "Numer konta: [uzupełnij]\n" +
-      "Tytuł przelewu: Rejs Fest 2026 - " + (payload.fullName || "") + "\n\n" +
-      "W razie pytań pisz na: rejsfest@gmail.com\n";
+    const socialLinks = Array.isArray(payload.socialLinks) && payload.socialLinks.length
+      ? payload.socialLinks
+      : SOCIAL_LINKS;
+    const socialBlock = socialLinks.length
+      ? "Wpadaj też tutaj i bądź z nami na bieżąco:\n" +
+        socialLinks.map((link) => "- " + link.label + ": " + link.url).join("\n") +
+        "\n\n"
+      : "";
 
     MailApp.sendEmail({
       to: payload.email,
-      subject: participantSubject,
-      body: participantBody,
+      subject: "Rejs Fest 2026 - potwierdzenie zapisu",
+      body:
+        "Hej!\n\n" +
+        "Dzięki za zapis na Rejs Fest 2026.\n" +
+        "Twoje zgłoszenie zostało przyjęte.\n\n" +
+        "Cieszymy się, że chcesz być z nami w Arce. Szykujemy dzień pełen spotkań, muzyki, modlitwy i dobrej energii.\n\n" +
+        "Data: 29 sierpnia 2026\n" +
+        "Miejsce: Białystok, Parafia NSM na Dojlidach\n" +
+        "Koszt udziału: " + (payload.ticketPrice || DEFAULT_TICKET_PRICE) + "\n\n" +
+        "Dane do przelewu:\n" +
+        "Odbiorca: [uzupełnij]\n" +
+        "Numer konta: [uzupełnij]\n" +
+        "Tytuł przelewu: Rejs Fest 2026 - " + (payload.fullName || "") + "\n\n" +
+        socialBlock +
+        "W razie pytań pisz na: rejsfest@gmail.com\n",
       replyTo: REPLY_TO,
     });
 
     return ContentService
       .createTextOutput(JSON.stringify({ ok: true }))
       .setMimeType(ContentService.MimeType.JSON);
+
   } catch (error) {
+    Logger.log("ERROR: " + error);
     return ContentService
       .createTextOutput(JSON.stringify({ ok: false, error: String(error) }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+function doGet() {
+  return ContentService
+    .createTextOutput("OK - Rejs Fest webhook działa")
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
+function testWriteAndMail() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
+  if (!sheet) throw new Error("Nie znaleziono zakładki: " + SHEET_NAME);
+
+  sheet.appendRow([
+    new Date(),
+    "Test User",
+    "twoj-testowy-mail@example.com",
+    "2000-01-01",
+    DEFAULT_TICKET_PRICE,
+    "test",
+    ORGANIZER_EMAIL,
+  ]);
+
+  MailApp.sendEmail({
+    to: ORGANIZER_EMAIL,
+    subject: "TEST - Rejs Fest 2026",
+    body: "To jest test maila do organizatora.",
+    replyTo: REPLY_TO,
+  });
 }
 ```
 
@@ -117,14 +155,15 @@ W lokalnym `.env` ustaw:
 PUBLIC_REGISTRATION_WEBHOOK_URL=TU_WKLEJ_URL_Z_GOOGLE_APPS_SCRIPT
 ```
 
-Ta zmienna jest już obsłużona przez formularz w:
+Ta zmienna jest obsłużona przez endpoint rejestracji i formularz w:
 - [FinalCtaSection.tsx](/Users/mlenqe/Desktop/RejsFestAstro/rejs-fest-astro/src/app/components/landing/FinalCtaSection.tsx)
 
 ## 5. Co robi front
 
 Po kliknięciu `Potwierdzam zapis` formularz:
 - waliduje dane,
-- wysyła je do `PUBLIC_REGISTRATION_WEBHOOK_URL` przez `GET ?data=...`,
+- wysyła je do lokalnego `/api/register` przez `POST`,
+- a endpoint serwerowy przekazuje payload do `PUBLIC_REGISTRATION_WEBHOOK_URL`,
 - pokazuje komunikat sukcesu albo błędu.
 
 Wysyłane pola:
@@ -136,6 +175,7 @@ Wysyłane pola:
 - `eventDate`
 - `eventLocation`
 - `organizerInbox`
+- `socialLinks`
 - `submittedAt`
 
 ## 6. Uzupełnij przed startem
@@ -143,5 +183,6 @@ Wysyłane pola:
 Przed uruchomieniem wpisz do skryptu:
 - prawdziwego odbiorcę przelewu,
 - prawdziwy numer konta,
+- linki do kolejnych sociali, jeśli chcesz dodać więcej niż Instagram,
 - ewentualny termin płatności,
-- finalną nazwę arkusza, jeśli jest inna niż `Arkusz1`.
+- finalną nazwę arkusza, jeśli jest inna niż `RejsFestZapisy`.

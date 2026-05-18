@@ -2,6 +2,7 @@ import { ArrowRight, Heart, MessageCircle, Music2, Users } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import { TICKET_PRICE } from "../../../config/event";
 import { submitRegistrationWebhook } from "../../utils/registrationWebhook";
 
 type FinalCtaSectionProps = {
@@ -12,7 +13,6 @@ type FinalCtaSectionProps = {
 };
 
 const EVENT_DATE = { year: 2026, month: 8, day: 29 } as const;
-const TICKET_PRICE = "50 zł";
 const agendaItems = [
   {
     icon: Users,
@@ -32,7 +32,7 @@ const agendaItems = [
   },
 ] as const;
 const ticketBenefits = [
-  "Koszt udziału to 50 zł i nie ma tu żadnych ukrytych dopłat.",
+  `Koszt udziału to ${TICKET_PRICE} i nie ma tu żadnych ukrytych dopłat.`,
   "Po zapisie dostajesz mail z danymi do przelewu i dalszymi informacjami.",
   "Cała rejestracja zajmuje mniej niż minutę.",
 ] as const;
@@ -262,7 +262,7 @@ export function FinalCtaSection({
 
             <div className="rounded-[1.1rem] border border-[#E8D98D] bg-[#FFF8E3] px-4 py-3 text-center">
               <p className="text-[0.92rem] font-semibold text-[#3E3354] md:text-[0.98rem]">
-                Koszt udziału to 50 zł (zapis zajmie Ci mniej niż minutę).
+                Koszt udziału to {TICKET_PRICE} (zapis zajmie Ci mniej niż minutę).
               </p>
             </div>
 

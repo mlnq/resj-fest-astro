@@ -9,6 +9,7 @@ import {
   Backpack,
 } from "lucide-react";
 import { motion } from "motion/react";
+import { TICKET_PRICE } from "../../../config/event";
 import { SectionHeading } from "./components/SectionHeading";
 
 type EventInfoSectionProps = {
@@ -26,7 +27,7 @@ const infoItems = [
   {
     title: "Koszt",
     description:
-      "Udział w wydarzeniu kosztuje 59 zł. Po rejestracji uczestnik dostanie w mailu zwrotnym dane do przelewu.",
+      `Udział w wydarzeniu kosztuje ${TICKET_PRICE}. Po rejestracji uczestnik dostanie w mailu zwrotnym dane do przelewu.`,
     icon: Banknote,
     accent: "#F9E926",
   },

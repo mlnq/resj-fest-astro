@@ -1,6 +1,7 @@
 import { Instagram } from "lucide-react";
 import { motion, type MotionValue } from "motion/react";
 import type { RefObject } from "react";
+import { TICKET_PRICE } from "../../../config/event";
 import { CutoutButton } from "./components/CutoutButton";
 
 type HeroSectionProps = {
@@ -152,7 +153,7 @@ export function HeroSection({
             </div>
 
             <p className="text-[0.82rem] font-semibold tracking-[0.01em] text-[#5E6472] sm:text-[0.88rem] md:text-[0.92rem]">
-              50 zł • zapis zajmie mniej niż minutę
+              {TICKET_PRICE} • zapis zajmie mniej niż minutę
             </p>
           </div>
         </motion.div>

@@ -9,7 +9,7 @@
     "city": "Białystok",
     "venue": "Parafia NSM na Dojlidach",
     "date": "2026-08-29",
-    "ticket_price_pln": 50
+    "ticket_price_pln": 59
   },
   "audience": {
     "primary": "młodzież 16+ oraz młodzi dorośli",
@@ -44,7 +44,7 @@
     "Bóg ma być żywo obecny w komunikacji, ale bez kościelnego słownika i patosu.",
     "Copy ma być czytelne na mobile: krótkie zdania, szybki skan, mocne korzyści.",
     "Najważniejsze korzyści: relacje, pokój, muzyka, spotkanie z Bogiem, nowa energia.",
-    "Cena uczestnictwa: 50 zł."
+    "Cena uczestnictwa: 59 zł."
   ],
   "approved_core_copy": {
     "hero_headline": "Budujemy Arkę, w której nikomu nie braknie miejsca.",
@@ -74,7 +74,7 @@
       "Czas modlitwy i moment, żeby zatrzymać się przy Bogu bez presji.",
       "Wieczorny finał: koncerty, wspólne śpiewanie i mocny klimat do końca dnia."
     ],
-    "microcopy": "Koszt udziału to 50 zł (zapis zajmie Ci mniej niż minutę)."
+    "microcopy": "Koszt udziału to 59 zł (zapis zajmie Ci mniej niż minutę)."
   },
   "output_rules": {
     "mobile_first": true,

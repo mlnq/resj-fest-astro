@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
+import { TICKET_PRICE } from "../../../config/event";
 import { SectionHeading } from "./components/SectionHeading";
 
 type FaqSectionProps = {
@@ -20,7 +21,7 @@ const faqItems = [
   {
     question: "Czy wydarzenie jest płatne?",
     answer:
-      "Tak. Udział kosztuje 59 zł, a po rejestracji wyślemy mail zwrotny z danymi do przelewu.",
+      `Tak. Udział kosztuje ${TICKET_PRICE}, a po rejestracji wyślemy mail zwrotny z danymi do przelewu.`,
   },
   {
     question: "Czy na miejscu będzie jedzenie i woda?",
