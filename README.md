@@ -105,5 +105,5 @@ Wynik buildu trafia do katalogu `dist/`.
 
 Formularz zapisów jest przygotowany pod zewnętrzny webhook i może działać bez zmiany hostingu z `GitHub Pages`.
 
-- Backend `/api/register` używa zmiennej `PUBLIC_REGISTRATION_WEBHOOK_URL`.
+- Backend `/api/register` używa zmiennej `REGISTRATION_WEBHOOK_URL`.
 - Przykładowe wdrożenie z `Google Sheets + Google Apps Script + Gmail` jest opisane w [docs/google-apps-script-zapisy.md](./docs/google-apps-script-zapisy.md).

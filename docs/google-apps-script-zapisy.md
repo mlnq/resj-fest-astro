@@ -152,7 +152,7 @@ Po publikacji dostaniesz URL web app.
 W lokalnym `.env` ustaw:
 
 ```env
-PUBLIC_REGISTRATION_WEBHOOK_URL=TU_WKLEJ_URL_Z_GOOGLE_APPS_SCRIPT
+REGISTRATION_WEBHOOK_URL=TU_WKLEJ_URL_Z_GOOGLE_APPS_SCRIPT
 ```
 
 Ta zmienna jest obsłużona przez endpoint rejestracji i formularz w:
@@ -163,7 +163,7 @@ Ta zmienna jest obsłużona przez endpoint rejestracji i formularz w:
 Po kliknięciu `Potwierdzam zapis` formularz:
 - waliduje dane,
 - wysyła je do lokalnego `/api/register` przez `POST`,
-- a endpoint serwerowy przekazuje payload do `PUBLIC_REGISTRATION_WEBHOOK_URL`,
+- a endpoint serwerowy przekazuje payload do `REGISTRATION_WEBHOOK_URL`,
 - pokazuje komunikat sukcesu albo błędu.
 
 Wysyłane pola:

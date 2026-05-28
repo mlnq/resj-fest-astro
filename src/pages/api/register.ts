@@ -1,4 +1,4 @@
-import type { APIRoute } from 'astro';
+import type { APIRoute } from "astro";
 import { TICKET_PRICE } from "../../config/event";
 
 const SHEET_NAME = "RejsFestZapisy";
@@ -29,19 +29,22 @@ export const POST: APIRoute = async ({ request }) => {
     const webhookUrl = import.meta.env.REGISTRATION_WEBHOOK_URL;
 
     if (!webhookUrl) {
-      return new Response(JSON.stringify({
-        ok: false,
-        message: "Brak PUBLIC_REGISTRATION_WEBHOOK_URL"
-      }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          message: "Brak PUBLIC_REGISTRATION_WEBHOOK_URL",
+        }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
     }
 
     // Serwer wywołuje GAS — zero problemów z CORS
     const gasResponse = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
 
@@ -49,20 +52,28 @@ export const POST: APIRoute = async ({ request }) => {
       throw new Error(`GAS error: ${gasResponse.status}`);
     }
 
-    return new Response(JSON.stringify({
-      ok: true,
-      message: "Zapis przyjęty. Sprawdź skrzynkę mailową - wyślemy Ci potwierdzenie i dane do przelewu."
-    }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({
+        ok: true,
+        message:
+          "Zapis przyjęty. Sprawdź skrzynkę mailową - wyślemy Ci potwierdzenie i dane do przelewu.",
+      }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   } catch (error) {
-    return new Response(JSON.stringify({
-      ok: false,
-      message: "Nie udało się wysłać formularza. Spróbuj ponownie za chwilę albo napisz na rejsfest@gmail.com."
-    }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return new Response(
+      JSON.stringify({
+        ok: false,
+        message:
+          "Nie udało się wysłać formularza. Spróbuj ponownie za chwilę albo napisz na rejsfest@gmail.com.",
+      }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
 };

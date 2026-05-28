@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import netlify from '@astrojs/netlify';
+import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 
 const SITE = 'https://rejsfest.pl';
@@ -30,5 +30,5 @@ export default defineConfig({
   site: SITE,
   base: '/',
   output: 'server',
-  adapter: netlify(),
+  adapter: vercel(),
 });
