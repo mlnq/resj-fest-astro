@@ -26,7 +26,7 @@ export const POST: APIRoute = async ({ request }) => {
       submittedAt: new Date().toISOString(),
     };
 
-    const webhookUrl = import.meta.env.PUBLIC_REGISTRATION_WEBHOOK_URL;
+    const webhookUrl = import.meta.env.REGISTRATION_WEBHOOK_URL;
 
     if (!webhookUrl) {
       return new Response(JSON.stringify({
