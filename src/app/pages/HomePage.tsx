@@ -72,6 +72,29 @@ export function HomePage() {
   }, [isTopBarVisible, topBarOpacity, topBarY]);
 
   useEffect(() => {
+    const scrollToSectionFromHash = () => {
+      const targetId = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      if (!targetId) return;
+
+      const element = document.getElementById(targetId);
+      if (!element) return;
+
+      const offset = targetId === "start" ? 0 : 24;
+      const targetTop = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(targetTop, 0), behavior: "auto" });
+      setActiveSectionId(targetId);
+    };
+
+    const frameId = window.requestAnimationFrame(scrollToSectionFromHash);
+    window.addEventListener("hashchange", scrollToSectionFromHash);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.removeEventListener("hashchange", scrollToSectionFromHash);
+    };
+  }, []);
+
+  useEffect(() => {
     const updateNextSection = () => {
       const sections = sectionOrder
         .map((id) => document.getElementById(id))
