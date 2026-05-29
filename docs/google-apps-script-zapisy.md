@@ -27,6 +27,7 @@ const ORGANIZER_EMAIL = "rejsfest@gmail.com";
 const REPLY_TO = "rejsfest@gmail.com";
 const DEFAULT_TICKET_PRICE = "59 zł";
 const SOCIAL_LINKS = [
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61590286103198" },
   { label: "Instagram", url: "https://www.instagram.com/rejsfest" },
 ];
 

@@ -2,31 +2,19 @@ import {
   Facebook,
   Instagram,
   Mail,
-  Music2,
-  Youtube,
 } from "lucide-react";
 import { withBasePath } from "../../utils/assets";
 
 const socialLinks = [
   {
-    href: "https://www.facebook.com/",
+    href: "https://www.facebook.com/profile.php?id=61590286103198",
     label: "Facebook Rejs Fest",
     icon: Facebook,
-  },
-  {
-    href: "https://www.youtube.com/",
-    label: "YouTube Rejs Fest",
-    icon: Youtube,
   },
   {
     href: "https://www.instagram.com/rejsfest",
     label: "Instagram Rejs Fest",
     icon: Instagram,
-  },
-  {
-    href: "https://open.spotify.com/",
-    label: "Spotify Rejs Fest",
-    icon: Music2,
   },
 ];
 
