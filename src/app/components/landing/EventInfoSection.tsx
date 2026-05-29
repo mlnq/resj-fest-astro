@@ -20,7 +20,7 @@ const infoItems = [
   {
     title: "Dla kogo",
     description:
-      "Dla młodzieży, studentów, młodych dorosłych oraz wszystkich, którzy chcą wejść w doświadczenie wspólnoty, modlitwy i festiwalowej atmosfery.",
+      "Dla osób w wieku 16-30 lat, które chcą wejść w doświadczenie wspólnoty, modlitwy i festiwalowej atmosfery.",
     icon: UserRound,
     accent: "#F29BBE",
   },

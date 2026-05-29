@@ -1,5 +1,10 @@
 import type { APIRoute } from "astro";
 import { TICKET_PRICE } from "../../config/event";
+import {
+  PARTICIPANT_AGE_MESSAGE,
+  isAgeWithinParticipantRange,
+  parseDateInput,
+} from "../../app/utils/participantAge";
 
 const SHEET_NAME = "RejsFestZapisy";
 const ORGANIZER_EMAIL = "rejsfest@gmail.com";
@@ -14,6 +19,20 @@ const SOCIAL_LINKS = [
 export const POST: APIRoute = async ({ request }) => {
   try {
     const input = await request.json();
+    const parsedBirthDate = parseDateInput(String(input.birthDate ?? ""));
+
+    if (!parsedBirthDate || !isAgeWithinParticipantRange(parsedBirthDate)) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          message: PARTICIPANT_AGE_MESSAGE,
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    }
 
     const payload = {
       ...input,

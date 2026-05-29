@@ -3,6 +3,14 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { z } from "zod";
 import { TICKET_PRICE } from "../../../config/event";
+import {
+  PARTICIPANT_AGE_LABEL,
+  PARTICIPANT_AGE_MESSAGE,
+  PARTICIPANT_BIRTH_DATE_MAX,
+  PARTICIPANT_BIRTH_DATE_MIN,
+  parseDateInput,
+  isAgeWithinParticipantRange,
+} from "../../utils/participantAge";
 import { submitRegistrationWebhook } from "../../utils/registrationWebhook";
 
 type FinalCtaSectionProps = {
@@ -12,7 +20,6 @@ type FinalCtaSectionProps = {
   wodaSrc: string;
 };
 
-const EVENT_DATE = { year: 2026, month: 8, day: 29 } as const;
 const agendaItems = [
   {
     icon: Users,
@@ -37,32 +44,6 @@ const ticketBenefits = [
   "Cała rejestracja zajmuje mniej niż minutę.",
 ] as const;
 
-const parseDateInput = (value: string) => {
-  const [year, month, day] = value.split("-").map(Number);
-
-  if (!year || !month || !day) {
-    return null;
-  }
-
-  return { year, month, day };
-};
-
-const isAtLeastAgeOnEventDate = (
-  birthDate: { year: number; month: number; day: number },
-  requiredAge: number,
-) => {
-  let age = EVENT_DATE.year - birthDate.year;
-
-  if (
-    EVENT_DATE.month < birthDate.month ||
-    (EVENT_DATE.month === birthDate.month && EVENT_DATE.day < birthDate.day)
-  ) {
-    age -= 1;
-  }
-
-  return age >= requiredAge;
-};
-
 const formatBirthDate = (value: string) => {
   const parsed = parseDateInput(value);
   if (!parsed) return value;
@@ -80,8 +61,8 @@ const participantSchema = z.object({
     .refine((value) => parseDateInput(value) !== null, "Podaj poprawną datę urodzenia.")
     .refine((value) => {
       const parsed = parseDateInput(value);
-      return parsed ? isAtLeastAgeOnEventDate(parsed, 16) : true;
-    }, "Wydarzenie jest dla osób, które 29 sierpnia 2026 mają ukończone 16 lat."),
+      return parsed ? isAgeWithinParticipantRange(parsed) : true;
+    }, PARTICIPANT_AGE_MESSAGE),
 });
 
 type ParticipantFormValues = {
@@ -351,6 +332,8 @@ export function FinalCtaSection({
                     type="date"
                     value={birthDate}
                     onChange={(event) => setBirthDate(event.target.value)}
+                    min={PARTICIPANT_BIRTH_DATE_MIN}
+                    max={PARTICIPANT_BIRTH_DATE_MAX}
                     aria-invalid={Boolean(errors.birthDate)}
                     className={`w-full rounded-xl border bg-[#FCFBF7] px-4 py-3.5 text-base text-[#21314E] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] focus:outline-none ${
                       errors.birthDate
@@ -364,7 +347,7 @@ export function FinalCtaSection({
                     </p>
                   ) : (
                     <p className="text-[0.82rem] text-[#6E6A61]">
-                      Wydarzenie jest dla osób, które 29 sierpnia 2026 mają ukończone 16 lat.
+                      Wydarzenie jest dla osób w wieku {PARTICIPANT_AGE_LABEL}.
                     </p>
                   )}
                 </div>
