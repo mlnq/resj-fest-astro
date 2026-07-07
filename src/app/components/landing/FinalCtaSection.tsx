@@ -52,7 +52,8 @@ const formatBirthDate = (value: string) => {
 };
 
 const participantSchema = z.object({
-  fullName: z.string().trim().min(2, "Podaj imię i nazwisko."),
+  firstName: z.string().trim().min(2, "Podaj imię."),
+  lastName: z.string().trim().min(2, "Podaj nazwisko."),
   email: z.email("Podaj poprawny adres e-mail."),
   birthDate: z
     .string()
@@ -66,7 +67,8 @@ const participantSchema = z.object({
 });
 
 type ParticipantFormValues = {
-  fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   birthDate: string;
 };
@@ -100,7 +102,8 @@ export function FinalCtaSection({
   wodaSrc,
 }: FinalCtaSectionProps) {
   const [step, setStep] = useState<1 | 2>(1);
-  const [fullName, setFullName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [errors, setErrors] = useState<ParticipantFormErrors>({});
@@ -110,7 +113,8 @@ export function FinalCtaSection({
   const [submissionMessage, setSubmissionMessage] = useState("");
 
   const participantValues: ParticipantFormValues = {
-    fullName,
+    firstName,
+    lastName,
     email,
     birthDate,
   };
@@ -118,11 +122,12 @@ export function FinalCtaSection({
   useEffect(() => {
     if (!hasAttemptedContinue) return;
     setErrors(getParticipantErrors(participantValues));
-  }, [fullName, email, birthDate, hasAttemptedContinue]);
+  }, [firstName, lastName, email, birthDate, hasAttemptedContinue]);
 
   const resetForm = () => {
     setStep(1);
-    setFullName("");
+    setFirstName("");
+    setLastName("");
     setEmail("");
     setBirthDate("");
     setErrors({});
@@ -145,7 +150,7 @@ export function FinalCtaSection({
     setSubmissionMessage("");
 
     const result = await submitRegistrationWebhook({
-      fullName,
+      fullName: `${firstName} ${lastName}`.trim(),
       email,
       birthDate,
       ticketPrice: TICKET_PRICE,
@@ -270,29 +275,56 @@ export function FinalCtaSection({
 
             {step === 1 ? (
               <>
-                <div className="space-y-2 text-left">
-                  <label
-                    htmlFor="name"
-                    className="block font-sans text-[0.92rem] font-semibold tracking-[0.01em] text-[#3E3354]"
-                  >
-                    Imię i nazwisko
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    value={fullName}
-                    onChange={(event) => setFullName(event.target.value)}
-                    placeholder="Jan Kowalski"
-                    aria-invalid={Boolean(errors.fullName)}
-                    className={`w-full rounded-xl border bg-[#FCFBF7] px-4 py-3.5 text-base text-[#21314E] placeholder:text-[#6E6A61] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] focus:outline-none ${
-                      errors.fullName
-                        ? "border-[#B4495D] bg-[#FFF8FA] focus:border-[#B4495D]"
-                        : "border-[#CAC2AE] focus:border-[#503967]"
-                    }`}
-                  />
-                  {errors.fullName ? (
-                    <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.fullName}</p>
-                  ) : null}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-2 text-left">
+                    <label
+                      htmlFor="first-name"
+                      className="block font-sans text-[0.92rem] font-semibold tracking-[0.01em] text-[#3E3354]"
+                    >
+                      Imię
+                    </label>
+                    <input
+                      id="first-name"
+                      type="text"
+                      value={firstName}
+                      onChange={(event) => setFirstName(event.target.value)}
+                      placeholder="Jan"
+                      aria-invalid={Boolean(errors.firstName)}
+                      className={`w-full rounded-xl border bg-[#FCFBF7] px-4 py-3.5 text-base text-[#21314E] placeholder:text-[#6E6A61] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] focus:outline-none ${
+                        errors.firstName
+                          ? "border-[#B4495D] bg-[#FFF8FA] focus:border-[#B4495D]"
+                          : "border-[#CAC2AE] focus:border-[#503967]"
+                      }`}
+                    />
+                    {errors.firstName ? (
+                      <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.firstName}</p>
+                    ) : null}
+                  </div>
+
+                  <div className="space-y-2 text-left">
+                    <label
+                      htmlFor="last-name"
+                      className="block font-sans text-[0.92rem] font-semibold tracking-[0.01em] text-[#3E3354]"
+                    >
+                      Nazwisko
+                    </label>
+                    <input
+                      id="last-name"
+                      type="text"
+                      value={lastName}
+                      onChange={(event) => setLastName(event.target.value)}
+                      placeholder="Kowalski"
+                      aria-invalid={Boolean(errors.lastName)}
+                      className={`w-full rounded-xl border bg-[#FCFBF7] px-4 py-3.5 text-base text-[#21314E] placeholder:text-[#6E6A61] shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] focus:outline-none ${
+                        errors.lastName
+                          ? "border-[#B4495D] bg-[#FFF8FA] focus:border-[#B4495D]"
+                          : "border-[#CAC2AE] focus:border-[#503967]"
+                      }`}
+                    />
+                    {errors.lastName ? (
+                      <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.lastName}</p>
+                    ) : null}
+                  </div>
                 </div>
 
                 <div className="space-y-2 text-left">
@@ -371,7 +403,7 @@ export function FinalCtaSection({
                     Dane uczestnika
                   </p>
                   <div className="mt-3 space-y-2 text-[0.96rem] leading-6 text-[#273249]">
-                    <p><strong>Imię i nazwisko:</strong> {fullName}</p>
+                    <p><strong>Imię i nazwisko:</strong> {`${firstName} ${lastName}`.trim()}</p>
                     <p><strong>E-mail:</strong> {email}</p>
                     <p><strong>Data urodzenia:</strong> {formatBirthDate(birthDate)}</p>
                   </div>
