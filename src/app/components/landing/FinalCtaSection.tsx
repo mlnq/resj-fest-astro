@@ -59,7 +59,10 @@ const participantSchema = z.object({
     .string()
     .trim()
     .min(1, "Podaj datę urodzenia.")
-    .refine((value) => parseDateInput(value) !== null, "Podaj poprawną datę urodzenia.")
+    .refine(
+      (value) => parseDateInput(value) !== null,
+      "Podaj poprawną datę urodzenia.",
+    )
     .refine((value) => {
       const parsed = parseDateInput(value);
       return parsed ? isAgeWithinParticipantRange(parsed) : true;
@@ -73,10 +76,14 @@ type ParticipantFormValues = {
   birthDate: string;
 };
 
-type ParticipantFormErrors = Partial<Record<keyof ParticipantFormValues, string>>;
+type ParticipantFormErrors = Partial<
+  Record<keyof ParticipantFormValues, string>
+>;
 type SubmissionState = "idle" | "success" | "error";
 
-const getParticipantErrors = (values: ParticipantFormValues): ParticipantFormErrors => {
+const getParticipantErrors = (
+  values: ParticipantFormValues,
+): ParticipantFormErrors => {
   const result = participantSchema.safeParse(values);
 
   if (result.success) {
@@ -109,7 +116,8 @@ export function FinalCtaSection({
   const [errors, setErrors] = useState<ParticipantFormErrors>({});
   const [hasAttemptedContinue, setHasAttemptedContinue] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [submissionState, setSubmissionState] =
+    useState<SubmissionState>("idle");
   const [submissionMessage, setSubmissionMessage] = useState("");
 
   const participantValues: ParticipantFormValues = {
@@ -203,7 +211,7 @@ export function FinalCtaSection({
       >
         <div className="text-center">
           <h2 className="font-rejsfest text-[2.1rem] leading-[0.9] tracking-[0.03em] uppercase text-[#21314E] md:text-[4.9rem]">
-            Co czeka na Ciebie w Arce?
+            Co czeka na Ciebie w Arce
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-[0.98rem] leading-6 text-[#32415E] md:mt-7 md:text-[1.22rem] md:leading-[1.4]">
@@ -217,11 +225,16 @@ export function FinalCtaSection({
         >
           <div className="grid gap-3 md:grid-cols-2 md:gap-4">
             {agendaItems.map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-start gap-3 rounded-2xl bg-[#FFF8E3] px-4 py-3">
+              <div
+                key={text}
+                className="flex items-start gap-3 rounded-2xl bg-[#FFF8E3] px-4 py-3"
+              >
                 <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F9E926] text-[#21314E] shadow-[0_8px_18px_rgba(121,109,8,0.12)]">
                   <Icon className="h-[18px] w-[18px]" strokeWidth={2.4} />
                 </div>
-                <p className="text-[0.95rem] leading-6 text-[#273249] md:text-[1rem]">{text}</p>
+                <p className="text-[0.95rem] leading-6 text-[#273249] md:text-[1rem]">
+                  {text}
+                </p>
               </div>
             ))}
           </div>
@@ -248,7 +261,8 @@ export function FinalCtaSection({
 
             <div className="rounded-[1.1rem] border border-[#E8D98D] bg-[#FFF8E3] px-4 py-3 text-center">
               <p className="text-[0.92rem] font-semibold text-[#3E3354] md:text-[0.98rem]">
-                Koszt udziału to {TICKET_PRICE} (zapis zajmie Ci mniej niż minutę).
+                Koszt udziału to {TICKET_PRICE} (zapis zajmie Ci mniej niż
+                minutę).
               </p>
             </div>
 
@@ -297,7 +311,9 @@ export function FinalCtaSection({
                       }`}
                     />
                     {errors.firstName ? (
-                      <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.firstName}</p>
+                      <p className="text-[0.82rem] font-medium text-[#B4495D]">
+                        {errors.firstName}
+                      </p>
                     ) : null}
                   </div>
 
@@ -322,7 +338,9 @@ export function FinalCtaSection({
                       }`}
                     />
                     {errors.lastName ? (
-                      <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.lastName}</p>
+                      <p className="text-[0.82rem] font-medium text-[#B4495D]">
+                        {errors.lastName}
+                      </p>
                     ) : null}
                   </div>
                 </div>
@@ -348,7 +366,9 @@ export function FinalCtaSection({
                     }`}
                   />
                   {errors.email ? (
-                    <p className="text-[0.82rem] font-medium text-[#B4495D]">{errors.email}</p>
+                    <p className="text-[0.82rem] font-medium text-[#B4495D]">
+                      {errors.email}
+                    </p>
                   ) : null}
                 </div>
 
@@ -403,9 +423,17 @@ export function FinalCtaSection({
                     Dane uczestnika
                   </p>
                   <div className="mt-3 space-y-2 text-[0.96rem] leading-6 text-[#273249]">
-                    <p><strong>Imię i nazwisko:</strong> {`${firstName} ${lastName}`.trim()}</p>
-                    <p><strong>E-mail:</strong> {email}</p>
-                    <p><strong>Data urodzenia:</strong> {formatBirthDate(birthDate)}</p>
+                    <p>
+                      <strong>Imię i nazwisko:</strong>{" "}
+                      {`${firstName} ${lastName}`.trim()}
+                    </p>
+                    <p>
+                      <strong>E-mail:</strong> {email}
+                    </p>
+                    <p>
+                      <strong>Data urodzenia:</strong>{" "}
+                      {formatBirthDate(birthDate)}
+                    </p>
                   </div>
                 </div>
 
@@ -416,7 +444,8 @@ export function FinalCtaSection({
                         Udział w Rejs Fest 26
                       </p>
                       <p className="mt-1 text-[0.95rem] leading-6 text-[#4F596C]">
-                        Po zapisie wyślemy Ci mail z danymi do przelewu za udział w wydarzeniu.
+                        Po zapisie wyślemy Ci mail z danymi do przelewu za
+                        udział w wydarzeniu.
                       </p>
                     </div>
                     <p className="shrink-0 font-sans text-[1rem] font-semibold text-[#503967]">
@@ -440,7 +469,9 @@ export function FinalCtaSection({
                     disabled={isSubmitting}
                     className="flex w-full items-center justify-center gap-3 rounded-xl bg-[#F9E926] px-6 py-3.5 text-center font-sans text-[0.95rem] font-semibold tracking-[0.02em] text-[#21314E] shadow-[0_18px_40px_rgba(121,109,8,0.22)] transition-transform hover:scale-[1.01] hover:bg-[#F3E000] disabled:cursor-not-allowed disabled:bg-[#E6DFC5] disabled:text-[#6E6A61] disabled:shadow-none"
                   >
-                    <span>{isSubmitting ? "Wysyłam..." : "Potwierdzam zapis"}</span>
+                    <span>
+                      {isSubmitting ? "Wysyłam..." : "Potwierdzam zapis"}
+                    </span>
                     <ArrowRight className="h-5 w-5" strokeWidth={2.8} />
                   </button>
                 </div>
@@ -450,7 +481,9 @@ export function FinalCtaSection({
 
           <div
             className="paper-grain relative z-10 bg-[#21314E] p-5 text-left text-white shadow-[0_18px_40px_rgba(31,22,44,0.24)] md:p-6"
-            style={{ clipPath: "polygon(1.5% 0, 100% 1.5%, 98.5% 100%, 0 98.5%)" }}
+            style={{
+              clipPath: "polygon(1.5% 0, 100% 1.5%, 98.5% 100%, 0 98.5%)",
+            }}
           >
             <p className="font-sans text-[0.82rem] font-semibold tracking-[0.12em] text-[#F9E926] uppercase">
               {step === 1 ? "Jak to działa" : "Co dalej po zapisie"}
@@ -461,12 +494,12 @@ export function FinalCtaSection({
                   <strong>Krok 1:</strong> zostawiasz dane uczestnika.
                 </p>
                 <p>
-                  <strong>Krok 2:</strong> widzisz podsumowanie i potwierdzasz zapis bez
-                  przechodzenia do osobnej zakładki.
+                  <strong>Krok 2:</strong> widzisz podsumowanie i potwierdzasz
+                  zapis bez przechodzenia do osobnej zakładki.
                 </p>
                 <p>
-                  <strong>Efekt:</strong> po zapisie dostajesz w mailu dane do przelewu i
-                  dalsze informacje organizacyjne.
+                  <strong>Efekt:</strong> po zapisie dostajesz w mailu dane do
+                  przelewu i dalsze informacje organizacyjne.
                 </p>
               </div>
             ) : (
