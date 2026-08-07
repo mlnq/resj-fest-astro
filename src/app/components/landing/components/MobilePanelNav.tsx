@@ -1,10 +1,11 @@
-import { Anchor, House, ScrollText } from "lucide-react";
+import { Anchor, CalendarDays, House, ScrollText } from "lucide-react";
 import { useState } from "react";
 import { cn } from "../../ui/utils";
 
 const navItems = [
   { id: "start", label: "Start", icon: House },
   { id: "wydarzenie", label: "Vibe", icon: ScrollText },
+  { id: "harmonogram", label: "Plan", icon: CalendarDays },
   { id: "zapisy", label: "Pokład", icon: Anchor },
 ] as const;
 
@@ -27,7 +28,7 @@ export function MobilePanelNav() {
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-3 z-40 px-4 md:hidden">
       <div
-        className="pointer-events-auto grid grid-cols-3 bg-[#433052]/96 px-2 py-2 shadow-[0_16px_34px_rgba(38,27,54,0.24)] backdrop-blur-sm"
+        className="pointer-events-auto grid grid-cols-4 bg-[#433052]/96 px-2 py-2 shadow-[0_16px_34px_rgba(38,27,54,0.24)] backdrop-blur-sm"
         style={{ clipPath: "polygon(2% 0, 100% 0, 98% 100%, 0 100%)" }}
       >
         {navItems.map((item) => {

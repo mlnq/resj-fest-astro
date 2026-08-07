@@ -1,0 +1,88 @@
+{
+  "intro": {
+    "title": "Harmonogram",
+    "description": "Jeden dzień, wiele dobrych spotkań. Zobacz, co czeka na Ciebie na Rejs Fest 2026."
+  },
+  "mainSchedule": [
+    { "time": "09:00", "title": "Rejestracja uczestników", "description": "" },
+    {
+      "time": "10:00",
+      "title": "Eucharystia",
+      "description": "",
+      "details": [
+        { "label": "Przewodniczy", "text": "ks. abp Józef Guzdek, Metropolita Białostocki", "image": "archbishop", "imageAlt": "Ks. abp Józef Guzdek", "imageType": "person" },
+        { "label": "Posługa muzyczna", "text": "Wspólnota Tron Baranka", "image": "throneOfLamb", "imageAlt": "Logo Wspólnoty Tron Baranka" },
+        { "label": "Posługa liturgiczna", "text": "AWSD i Ministranci Diecezji", "images": [{ "source": "awsd", "alt": "Archidiecezjalne Wyższe Seminarium Duchowne w Białymstoku" }, { "source": "ministers", "alt": "Ministranci Diecezji" }] }
+      ]
+    },
+    {
+      "time": "11:15",
+      "title": "Otwarcie festiwalu i zawiązanie wspólnoty",
+      "description": "",
+      "details": [
+        { "label": "Prowadzący", "text": "Tymoteusz Kostro", "image": "tymek", "imageAlt": "Tymoteusz Kostro", "imageType": "person" },
+        { "label": "Prowadząca", "text": "Agnieszka Kucharewicz", "image": "agnieszka", "imageAlt": "Agnieszka Kucharewicz", "imageType": "person" },
+        { "label": "DJ / prezenter muzyczny", "text": "Michał Walendziuk", "image": "dj", "imageAlt": "Michał Walendziuk", "imageType": "person" }
+      ]
+    },
+    { "time": "13:00", "title": "Obiad", "description": "" },
+    { "time": "13:30", "title": "Czas spotkań, warsztatów i aktywności", "description": "Warsztaty w strefach rozpoczynają się o 13:45." },
+    {
+      "time": "16:00",
+      "title": "Konferencja i modlitwa",
+      "description": "",
+      "details": [
+        { "label": "Konferencja", "text": "Marcin Jakimowicz — redaktor „Gościa Niedzielnego”, pisarz, ewangelizator", "image": "jakimowicz", "imageAlt": "Marcin Jakimowicz", "imageType": "person" },
+        { "label": "Modlitwa", "text": "Wspólnota Dom Jednego Serca", "image": "oneHeartHome", "imageAlt": "Logo Wspólnoty Dom Jednego Serca" }
+      ]
+    },
+    { "time": "18:00", "title": "Kolacja", "description": "" },
+    { "time": "19:00", "title": "Koncert Wyrwani z Niewoli", "description": "", "details": [{ "label": "Koncert", "text": "Wyrwani z Niewoli", "image": "freedFromCaptivity", "imageAlt": "Wyrwani z Niewoli" }] },
+    { "time": "20:00", "title": "Koncert NiemaGotu", "description": "", "details": [{ "label": "Koncert", "text": "NiemaGotu", "image": "niemagotu", "imageAlt": "NiemaGotu" }] },
+    { "time": "21:30", "title": "Modlitwa posłania", "description": "" }
+  ],
+  "workshops": {
+    "timeRange": "13:45–15:45",
+    "title": "Wybierz swoją strefę",
+    "description": "Możesz ułożyć ten czas po swojemu: rozmowa, ruch, modlitwa albo po prostu dobra zabawa.",
+    "zones": [
+      {
+        "id": "meetings",
+        "title": "Strefa spotkań",
+        "blocks": [
+          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Fizjoterapia — jej wpływ na zdrowie.", "presenters": ["Dawid Kopciewski"], "image": "kopciewski", "imageAlt": "Dawid Kopciewski", "imageType": "person" }] },
+          { "label": "Blok II", "time": "14:45", "items": [{ "title": "O budowaniu relacji", "presenters": ["Joanna Szmurło-Grzybko"], "image": "szmurlo", "imageAlt": "Joanna Szmurło-Grzybko", "imageType": "person" }] }
+        ]
+      },
+      {
+        "id": "active",
+        "title": "Strefa aktywna",
+        "blocks": [
+          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Trening kalisteniczny", "presenters": ["Szkoła Kalisteniki Jest Progress"], "image": "jestProgress", "imageAlt": "Szkoła Kalisteniki Jest Progress" }] },
+          { "label": "Blok II", "time": "14:45", "items": [{ "title": "Trening CrossFit", "presenters": ["CrossFit Białystok"], "image": "crossfit", "imageAlt": "CrossFit Białystok" }] }
+        ],
+        "continuous": { "label": "Dostępne stale", "time": "13:45–15:45", "items": [{ "title": "Miejsce Słowa", "description": "Ewangelia w wirtualnej rzeczywistości (VR)", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }] }
+      },
+      {
+        "id": "spiritual",
+        "title": "Strefa duchowa",
+        "blocks": [
+          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Adoracja Najświętszego Sakramentu i spowiedź", "description": "Kościół NSM" }, { "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] },
+          { "label": "Blok II", "time": "14:45", "items": [{ "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] }
+        ]
+      }
+    ],
+    "speakers": [
+      { "initials": "JS", "name": "Joanna Szmurło-Grzybko", "description": "Dyrektor Ośrodka Revenu, magister pedagogiki, specjalistka psychoterapii uzależnień.", "image": "szmurlo", "imageAlt": "Joanna Szmurło-Grzybko", "imageType": "person" },
+      { "initials": "DK", "name": "Dawid Kopciewski", "description": "Terapeuta Holistycznej Terapii Manualnej.", "image": "kopciewski", "imageAlt": "Dawid Kopciewski", "imageType": "person" },
+      { "initials": "JP", "name": "o. Dariusz Piórkowski SJ", "description": "Jezuita, duszpasterz, kierownik duchowy i rekolekcjonista.", "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }
+    ],
+    "fun": {
+      "title": "Strefa Fun",
+      "availability": "Dostępne stale · 13:45–15:45",
+      "description": "Wpadaj w dowolnym momencie — tu po prostu dobrze się dzieje.",
+      "heading": "Wybierz coś dla siebie",
+      "activities": ["Namiot planszówek", "Siatkówka", "Gra w bule", "Piana party", "Dart piłkarski", "Tańce integracyjne"]
+    }
+  }
+}

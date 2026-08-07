@@ -15,6 +15,7 @@ import { ThemeSection } from "../components/landing/ThemeSection";
 import { DesktopTopBar } from "../components/landing/components/DesktopTopBar";
 import { MobilePanelNav } from "../components/landing/components/MobilePanelNav";
 import { NextSectionButton } from "../components/landing/components/NextSectionButton";
+import { ScheduleSection } from "../components/landing/ScheduleSection";
 
 // Tymczasowo zostawiamy na stronie tylko sekcje potrzebne do obecnej publikacji.
 // import { ArticlesSection } from "../components/landing/ArticlesSection";
@@ -24,9 +25,9 @@ import { NextSectionButton } from "../components/landing/components/NextSectionB
 // import { NiemaGotuSection } from "../components/landing/NiemaGotuSection";
 // import { ProgramPreviewSection } from "../components/landing/ProgramPreviewSection";
 
-const sectionOrder = ["start", "wydarzenie", "zapisy"] as const;
+const sectionOrder = ["start", "wydarzenie", "harmonogram", "zapisy"] as const;
 
-const navSectionOrder = ["start", "wydarzenie", "zapisy"] as const;
+const navSectionOrder = ["start", "wydarzenie", "harmonogram", "zapisy"] as const;
 
 export function HomePage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -178,6 +179,7 @@ export function HomePage() {
         rybaSrc={assetUrl(rybaSvg)}
         wodaSrc={assetUrl(wodaSvg)}
       />
+      <ScheduleSection sectionId="harmonogram" />
       {/* <ArticlesSection sectionId="aktualnosci" /> */}
       {/* <GallerySection sectionId="galeria" /> */}
       {/* <ProgramPreviewSection sectionId="plan" /> */}

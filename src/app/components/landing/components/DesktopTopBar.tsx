@@ -3,6 +3,7 @@ import type { RefObject } from "react";
 
 const desktopNavItems = [
   { id: "wydarzenie", label: "Wydarzenie" },
+  { id: "harmonogram", label: "Harmonogram" },
   { id: "zapisy", label: "Pokład" },
 ] as const;
 
