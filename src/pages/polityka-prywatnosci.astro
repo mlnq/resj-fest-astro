@@ -2,16 +2,135 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Polityka Prywatności | Rejs Fest 26">
+<Layout
+  title="Polityka prywatności | Rejs Fest 26"
+  description="Dowiedz się, jak Rejs Fest przetwarza dane uczestników i osób odwiedzających stronę."
+>
   <main class="min-h-screen bg-[#FFF9E6] px-5 py-16 text-[#1F2535] md:px-8 md:py-24">
-    <div class="mx-auto max-w-3xl">
-      <h1 class="font-rejsfest text-4xl uppercase tracking-[0.04em]">
-        Polityka Prywatności
-      </h1>
-      <p class="mt-6 text-lg leading-8">
-        Ta podstrona jest gotowa pod właściwą politykę prywatności dotyczącą zapisów,
-        formularzy i komunikacji organizacyjnej. Wstaw tutaj finalny dokument.
+    <article class="mx-auto max-w-3xl">
+      <p class="text-sm font-black uppercase tracking-[0.18em] text-[var(--festival-violet)]">
+        Rejs Fest 26
       </p>
-    </div>
+      <h1 class="mt-3 font-rejsfest text-4xl uppercase tracking-[0.04em] md:text-5xl">
+        Polityka prywatności
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-[#40506C]">
+        Twoje dane traktujemy z taką samą uważnością, z jaką szykujemy festiwalowy
+        pokład. Poniżej wyjaśniamy prostym językiem, co zbieramy, po co i jakie masz
+        w związku z tym prawa.
+      </p>
+
+      <div class="mt-10 space-y-10 text-[1rem] leading-8 text-[#40506C]">
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">1. Kto dba o Twoje dane</h2>
+          <p class="mt-3">
+            Administratorem danych osobowych jest Organizator Rejs Fest. W sprawach
+            dotyczących danych osobowych skontaktujesz się z nami pod adresem
+            <a href="mailto:rejsfest@gmail.com" class="font-bold text-[var(--festival-violet)] hover:underline">rejsfest@gmail.com</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">2. Jakie dane zbieramy</h2>
+          <p class="mt-3">Gdy zapisujesz się na wydarzenie, prosimy o:</p>
+          <ul class="mt-3 list-disc space-y-1 pl-6 marker:text-[var(--festival-violet)]">
+            <li>imię i nazwisko,</li>
+            <li>adres e-mail,</li>
+            <li>datę urodzenia.</li>
+          </ul>
+          <p class="mt-3">
+            Możemy też przetwarzać dane zawarte w Twojej korespondencji z nami oraz
+            podstawowe dane techniczne niezbędne do bezpiecznego działania strony,
+            takie jak adres IP i zapisy serwera.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">3. Po co nam te dane</h2>
+          <p class="mt-3">Dane z formularza wykorzystujemy, aby:</p>
+          <ul class="mt-3 list-disc space-y-1 pl-6 marker:text-[var(--festival-violet)]">
+            <li>przyjąć i obsłużyć Twoje zgłoszenie na Rejs Fest,</li>
+            <li>zweryfikować, czy spełniasz warunki udziału związane z wiekiem,</li>
+            <li>wysłać potwierdzenie zapisu, informacje organizacyjne i dane do płatności,</li>
+            <li>odpowiedzieć na Twoje pytania oraz zadbać o bezpieczeństwo serwisu.</li>
+          </ul>
+          <p class="mt-3">
+            Podstawą przetwarzania jest podjęcie działań przed zawarciem umowy i jej
+            realizacja (art. 6 ust. 1 lit. b RODO), nasz uzasadniony interes polegający
+            na sprawnej organizacji i ochronie wydarzenia (art. 6 ust. 1 lit. f RODO),
+            a gdy będzie to potrzebne — Twoja zgoda (art. 6 ust. 1 lit. a RODO).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">4. Kto może otrzymać dane</h2>
+          <p class="mt-3">
+            Dostęp do danych mają wyłącznie osoby zaangażowane w organizację Rejs Fest
+            oraz sprawdzeni dostawcy narzędzi technicznych: hosting, poczta e-mail i
+            system obsługi zapisów. Dane z formularza są przekazywane do narzędzia
+            obsługującego zgłoszenia, w tym usług Google wykorzystywanych do organizacji
+            zapisów. Każdy odbiorca przetwarza dane tylko w zakresie niezbędnym do swojej roli.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">5. Jak długo je przechowujemy</h2>
+          <p class="mt-3">
+            Dane zapisowe przechowujemy przez czas organizacji i rozliczenia wydarzenia,
+            a następnie przez okres konieczny do obrony przed ewentualnymi roszczeniami
+            lub spełnienia obowiązków wynikających z przepisów. Korespondencję zachowujemy
+            tak długo, jak jest to potrzebne do obsługi sprawy. Gdy podstawą jest zgoda,
+            dane przetwarzamy do jej wycofania, o ile wcześniej nie przestanie istnieć
+            inna podstawa prawna.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">6. Twoje prawa</h2>
+          <p class="mt-3">Masz prawo do:</p>
+          <ul class="mt-3 list-disc space-y-1 pl-6 marker:text-[var(--festival-violet)]">
+            <li>dostępu do swoich danych i otrzymania ich kopii,</li>
+            <li>ich sprostowania, usunięcia lub ograniczenia przetwarzania,</li>
+            <li>przenoszenia danych, gdy ma to zastosowanie,</li>
+            <li>wniesienia sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie,</li>
+            <li>wycofania zgody w dowolnym momencie — bez wpływu na zgodność z prawem wcześniejszego przetwarzania,</li>
+            <li>złożenia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+          </ul>
+          <p class="mt-3">
+            Aby skorzystać z tych praw, napisz do nas na
+            <a href="mailto:rejsfest@gmail.com" class="font-bold text-[var(--festival-violet)] hover:underline">rejsfest@gmail.com</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">7. Dobrowolność i bezpieczeństwo</h2>
+          <p class="mt-3">
+            Podanie danych w formularzu jest dobrowolne, ale niezbędne, aby przyjąć
+            zgłoszenie i przekazać Ci informacje związane z udziałem. Nie podejmujemy
+            wobec Ciebie decyzji wyłącznie w sposób zautomatyzowany i nie profilujemy
+            uczestników. Stosujemy środki organizacyjne i techniczne, które pomagają
+            chronić dane przed dostępem osób nieuprawnionych.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">8. Pliki cookies</h2>
+          <p class="mt-3">
+            Strona może wykorzystywać niezbędne pliki cookies i podobne technologie,
+            dzięki którym działa poprawnie i bezpiecznie. Obecnie nie prowadzimy na
+            niej własnych działań analitycznych ani reklamowych wymagających zgody na
+            cookies. Ustawienia plików cookies możesz zawsze zmienić w swojej przeglądarce.
+          </p>
+        </section>
+
+        <section class="border-t border-[#D8D4C8] pt-8">
+          <h2 class="text-2xl font-black tracking-[-0.03em] text-[#1F2535]">9. Zmiany polityki</h2>
+          <p class="mt-3">
+            Jeśli na pokładzie pojawią się zmiany wymagające aktualizacji tej polityki,
+            opublikujemy jej nową wersję na tej stronie. Polityka obowiązuje od 13 sierpnia 2026 r.
+          </p>
+        </section>
+      </div>
+    </article>
   </main>
 </Layout>
