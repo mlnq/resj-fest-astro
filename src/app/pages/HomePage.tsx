@@ -6,7 +6,7 @@ import lodzSvg from "../../assets/imports/lodz.svg";
 import palmaSvg from "../../assets/imports/palma.svg";
 import rybaSvg from "../../assets/imports/ryba.svg";
 import wodaSvg from "../../assets/imports/woda.svg";
-import heroBackground from "../../assets/imports/godzinaZ/0302-041A8268.jpg";
+import heroBackground from "../../assets/imports/rejsfest_bg.jpg";
 import { assetUrl } from "../utils/assets";
 import { FinalCtaSection } from "../components/landing/FinalCtaSection";
 import { HeroSection } from "../components/landing/HeroSection";
