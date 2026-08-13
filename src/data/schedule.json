@@ -60,8 +60,7 @@
         "blocks": [
           { "label": "Blok I", "time": "13:45", "items": [{ "title": "Trening kalisteniczny", "presenters": ["Szkoła Kalisteniki Jest Progress"], "image": "jestProgress", "imageAlt": "Szkoła Kalisteniki Jest Progress" }] },
           { "label": "Blok II", "time": "14:45", "items": [{ "title": "Trening CrossFit", "presenters": ["CrossFit Białystok"], "image": "crossfit", "imageAlt": "CrossFit Białystok" }] }
-        ],
-        "continuous": { "label": "Dostępne stale", "time": "13:45–15:45", "items": [{ "title": "Miejsce Słowa", "description": "Ewangelia w wirtualnej rzeczywistości (VR)", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }] }
+        ]
       },
       {
         "id": "spiritual",
@@ -69,7 +68,8 @@
         "blocks": [
           { "label": "Blok I", "time": "13:45", "items": [{ "title": "Adoracja Najświętszego Sakramentu i spowiedź", "description": "Kościół NSM" }, { "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] },
           { "label": "Blok II", "time": "14:45", "items": [{ "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] }
-        ]
+        ],
+        "continuous": { "label": "Dostępne stale", "time": "13:45–15:45", "items": [{ "title": "Miejsce Słowa", "description": "Ewangelia w wirtualnej rzeczywistości (VR)", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }] }
       }
     ],
     "speakers": [

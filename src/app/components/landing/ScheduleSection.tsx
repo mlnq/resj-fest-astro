@@ -123,19 +123,19 @@ export function ScheduleSection({ sectionId }: ScheduleSectionProps) {
   const { intro, mainSchedule, workshops } = schedule;
 
   return (
-    <section id={sectionId} className="bg-[#F2F5FA] px-5 py-18 md:px-8 md:py-24">
+    <section id={sectionId} className="overflow-x-clip bg-[#F2F5FA] px-5 py-18 md:px-8 md:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title={intro.title} description={intro.description} className="mb-14 md:mb-18" titleClassName="text-center text-5xl tracking-[0.03em] text-[#2F2F29] md:text-5xl" />
         <div className="relative mx-auto max-w-4xl">
           <div aria-hidden="true" className="absolute left-[2.9rem] top-6 bottom-6 w-px bg-[#B8AEC2] md:left-[4.1rem]" />
           <div className="space-y-8 md:space-y-9">
             {mainSchedule.map((item, index) => (
-              <motion.article key={`${item.time}-${item.title}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-10% 0px" }} transition={{ duration: 0.4, delay: index * 0.04 }} className="relative grid grid-cols-[5.8rem_1fr] gap-5 md:grid-cols-[8.2rem_1fr] md:gap-8">
+              <motion.article key={`${item.time}-${item.title}`} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-10% 0px" }} transition={{ duration: 0.4, delay: index * 0.04 }} className="relative grid grid-cols-[5.8rem_minmax(0,1fr)] gap-5 md:grid-cols-[8.2rem_minmax(0,1fr)] md:gap-8">
                 <div className="z-10 flex h-12 items-center justify-center bg-[#503967] px-3 font-rejsfest text-xl leading-none text-white shadow-[0_4px_0_rgba(80,57,103,0.18)] md:h-[3.75rem] md:px-5 md:text-[1.7rem]">{item.time}</div>
                 <div className="border-b border-[#C9C2B8] pb-8">
                   <h3 className="mb-2 text-2xl leading-[1.05] font-black text-[#32322D] md:text-[1.75rem]">{item.title}</h3>
                   {item.description && <p className="text-base leading-[1.5] text-[#45413B] md:text-[1.05rem]">{item.description}</p>}
-                  {item.details && <div className="mt-6 flex flex-wrap gap-5">{item.details.map((detail) => <div key={detail.label} className="flex min-w-[16rem] flex-1 items-center gap-4"><ScheduleImages images={[...(detail.image ? [{ source: detail.image, alt: detail.imageAlt ?? detail.text, imageType: detail.imageType }] : []), ...(detail.images ?? [])]} sizeClass="h-20 w-20 md:h-24 md:w-24" /><div className="min-w-0"><p className="text-xs font-black uppercase tracking-[0.08em] text-[#625C69]">{detail.label}</p><p className="text-sm leading-[1.4] font-semibold text-[#403B43]">{detail.text}</p></div></div>)}</div>}
+                  {item.details && <div className="mt-6 space-y-5">{item.details.map((detail) => <div key={detail.label} className="flex min-w-0 flex-col items-start gap-3 md:flex-row md:items-center md:gap-4"><ScheduleImages images={[...(detail.image ? [{ source: detail.image, alt: detail.imageAlt ?? detail.text, imageType: detail.imageType }] : []), ...(detail.images ?? [])]} sizeClass="h-16 w-16 md:h-24 md:w-24" /><div className="min-w-0"><p className="text-xs font-black uppercase tracking-[0.08em] text-[#625C69]">{detail.label}</p><p className="text-sm leading-[1.4] font-semibold text-[#403B43]">{detail.text}</p></div></div>)}</div>}
                 </div>
               </motion.article>
             ))}
