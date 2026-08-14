@@ -50,26 +50,26 @@
         "id": "meetings",
         "title": "Strefa spotkań",
         "blocks": [
-          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Fizjoterapia — jej wpływ na zdrowie.", "presenters": ["Dawid Kopciewski"], "image": "kopciewski", "imageAlt": "Dawid Kopciewski", "imageType": "person" }] },
-          { "label": "Blok II", "time": "14:45", "items": [{ "title": "O budowaniu relacji", "presenters": ["Joanna Szmurło-Grzybko"], "image": "szmurlo", "imageAlt": "Joanna Szmurło-Grzybko", "imageType": "person" }] }
+          { "label": "I", "time": "13:45", "items": [{ "title": "Fizjoterapia — jej wpływ na zdrowie.", "presenters": ["Dawid Kopciewski"], "image": "kopciewski", "imageAlt": "Dawid Kopciewski", "imageType": "person" }, { "title": "O budowaniu relacji", "presenters": ["Joanna Szmurło-Grzybko"], "image": "szmurlo", "imageAlt": "Joanna Szmurło-Grzybko", "imageType": "person" }] },
+          { "label": "II", "time": "14:45", "items": [{ "title": "O budowaniu relacji", "presenters": ["Joanna Szmurło-Grzybko"], "image": "szmurlo", "imageAlt": "Joanna Szmurło-Grzybko", "imageType": "person" }, { "title": "Fizjoterapia — jej wpływ na zdrowie.", "presenters": ["Dawid Kopciewski"], "image": "kopciewski", "imageAlt": "Dawid Kopciewski", "imageType": "person" }] }
         ]
       },
       {
         "id": "active",
         "title": "Strefa aktywna",
         "blocks": [
-          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Trening kalisteniczny", "presenters": ["Szkoła Kalisteniki Jest Progress"], "image": "jestProgress", "imageAlt": "Szkoła Kalisteniki Jest Progress" }] },
-          { "label": "Blok II", "time": "14:45", "items": [{ "title": "Trening CrossFit", "presenters": ["CrossFit Białystok"], "image": "crossfit", "imageAlt": "CrossFit Białystok" }] }
+          { "label": "I", "time": "13:45", "items": [{ "title": "Trening kalisteniczny", "presenters": ["Szkoła Kalisteniki Jest Progress"], "image": "jestProgress", "imageAlt": "Szkoła Kalisteniki Jest Progress" }] },
+          { "label": "II", "time": "14:45", "items": [{ "title": "Trening CrossFit", "presenters": ["CrossFit Białystok"], "image": "crossfit", "imageAlt": "CrossFit Białystok" }] }
         ]
       },
       {
         "id": "spiritual",
         "title": "Strefa duchowa",
         "blocks": [
-          { "label": "Blok I", "time": "13:45", "items": [{ "title": "Adoracja Najświętszego Sakramentu i spowiedź", "description": "Kościół NSM" }, { "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] },
-          { "label": "Blok II", "time": "14:45", "items": [{ "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] }
+          { "label": "I", "time": "13:45", "items": [{ "title": "Biblijny pokaz VR", "description": "Stanowisko wirtualnej rzeczywistości", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }, { "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] },
+          { "label": "II", "time": "14:45", "items": [{ "title": "Biblijny pokaz VR", "description": "Stanowisko wirtualnej rzeczywistości", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }, { "title": "Szkoła modlitwy Słowem Bożym", "presenters": ["o. Dariusz Piórkowski SJ"], "image": "piorkowski", "imageAlt": "o. Dariusz Piórkowski SJ", "imageType": "person" }] }
         ],
-        "continuous": { "label": "Dostępne stale", "time": "13:45–15:45", "items": [{ "title": "Miejsce Słowa", "description": "Ewangelia w wirtualnej rzeczywistości (VR)", "image": "placeOfWord", "imageAlt": "Miejsce Słowa" }] }
+        "continuous": { "label": "Dostępne stale", "time": "13:45–15:45", "items": [{ "title": "Adoracja Najświętszego Sakramentu i spowiedź", "description": "Kościół NSM" }] }
       }
     ],
     "speakers": [

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { BookOpen, Dumbbell, MessageCircle, type LucideIcon } from "lucide-react";
+import { BookOpen, Dumbbell, Gamepad2, MessageCircle, type LucideIcon } from "lucide-react";
 import scheduleJson from "../../../data/schedule.json";
 import archbishopImage from "../../../assets/imports/arcybiskup.jpg";
 import agnieszkaImage from "../../../assets/imports/aga-kucharewicz.png";
@@ -24,7 +24,8 @@ import { SectionHeading } from "./components/SectionHeading";
 type ImageReference = { source: string; alt: string; imageType?: "person" | "logo" };
 type ScheduleDetail = { label: string; text: string; image?: string; imageAlt?: string; imageType?: "person" | "logo"; images?: ImageReference[] };
 type ScheduleItem = { time: string; title: string; description: string; details?: ScheduleDetail[] };
-type WorkshopItem = { title: string; description?: string; presenters?: string[]; image?: string; imageAlt?: string; imageType?: "person" | "logo" };
+type WorkshopBlockRange = { label: string; time: string };
+type WorkshopItem = { title: string; description?: string; presenters?: string[]; image?: string; imageAlt?: string; imageType?: "person" | "logo"; blockRanges?: WorkshopBlockRange[] };
 type WorkshopBlock = { label: string; time: string; items: WorkshopItem[] };
 type WorkshopZone = {
   id: string;
@@ -106,17 +107,36 @@ function ScheduleImages({ images, sizeClass }: { images: ImageReference[]; sizeC
   return <div className="flex shrink-0 -space-x-2">{availableImages.map((image) => <img key={image.source} src={scheduleImages[image.source]} alt={image.alt} className={`${sizeClass} ${image.imageType === "person" ? "rounded-full ring-2 ring-white object-cover" : "rounded-lg border border-[#C9C2B8] bg-white p-1 object-contain"} shadow-[2px_3px_0_rgba(80,57,103,0.15)]`} />)}</div>;
 }
 
-function WorkshopItems({ items }: { items: WorkshopItem[] }) {
+function WorkshopItems({ items, accentColor }: { items: WorkshopItem[]; accentColor?: string }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-6">
       {items.map((item) => (
-        <div key={`${item.title}-${item.description ?? ""}`} className={item.image ? "flex items-start justify-between gap-3" : undefined}>
-          <div><p className="text-base leading-[1.5] text-[#403B43]">{item.title}</p>{item.description && <p className="text-sm leading-[1.45] text-[#5B5660]">{item.description}</p>}{item.presenters?.map((presenter) => <strong key={presenter} className="block text-base font-black leading-[1.5] text-[#29242C]">{presenter}</strong>)}</div>
-          {item.image && <ScheduleImages images={[{ source: item.image, alt: item.imageAlt ?? item.title, imageType: item.imageType }]} sizeClass="h-20 w-20 md:h-[5.5rem] md:w-[5.5rem]" />}
+        <div key={`${item.title}-${item.description ?? ""}`}>
+          {item.blockRanges && <div className="mb-2 flex flex-wrap items-center gap-1.5">{item.blockRanges.map((block) => <span key={block.time} className="rounded-xl border px-3 py-1 text-[0.68rem] font-bold tracking-[0.3px]" style={accentColor ? { color: accentColor, backgroundColor: `${accentColor}14`, borderColor: `${accentColor}33` } : undefined}>{block.time.split("–")[0]}</span>)}<span className="ml-0.5 text-xs text-[#6B7280]">60 min</span></div>}
+          <div className={item.image ? "flex items-start justify-between gap-3" : undefined}><div className="min-w-0"><p className="text-[1.05rem] font-bold leading-[1.35] text-[#111827]">{item.title}</p>{item.description && <p className="mt-1 text-sm leading-[1.45] text-[#6B7280]">{item.description}</p>}{item.presenters?.map((presenter) => <p key={presenter} className="mt-1 block text-sm font-normal leading-[1.45] text-[#6B7280]">{presenter}</p>)}</div>{item.image && <ScheduleImages images={[{ source: item.image, alt: item.imageAlt ?? item.title, imageType: item.imageType }]} sizeClass="h-14 w-14 md:h-16 md:w-16" />}</div>
         </div>
       ))}
     </div>
   );
+}
+
+function groupedWorkshopItems(blocks: WorkshopBlock[], finalBlockEnd: string) {
+  const items = new Map<string, WorkshopItem>();
+
+  blocks.forEach((block, blockIndex) => {
+    const blockRange = { label: block.label, time: `${block.time}–${blocks[blockIndex + 1]?.time ?? finalBlockEnd}` };
+    block.items.forEach((item) => {
+      const key = `${item.title}-${item.description ?? ""}-${item.presenters?.join("-") ?? ""}`;
+      const existingItem = items.get(key);
+      if (existingItem) {
+        existingItem.blockRanges?.push(blockRange);
+      } else {
+        items.set(key, { ...item, blockRanges: [blockRange] });
+      }
+    });
+  });
+
+  return Array.from(items.values());
 }
 
 export function ScheduleSection({ sectionId }: ScheduleSectionProps) {
@@ -151,14 +171,14 @@ export function ScheduleSection({ sectionId }: ScheduleSectionProps) {
             {workshops.zones.map((zone, index) => {
               const decoration = zoneDecorations[zone.id];
               const Icon = decoration.icon;
+              const finalBlockEnd = workshops.timeRange.split("–")[1] ?? "";
+              const items = groupedWorkshopItems(zone.blocks, finalBlockEnd);
 
               return (
                 <motion.article key={zone.id} initial={{ opacity: 0, y: 28, rotate: decoration.rotate }} whileInView={{ opacity: 1, y: 0, rotate: decoration.rotate }} viewport={{ once: true, margin: "-10% 0px" }} transition={{ duration: 0.45, delay: index * 0.08 }} whileHover={{ rotate: 0, scale: 1.03 }} className="relative bg-white p-6 shadow-xl md:p-7" style={{ clipPath: decoration.cardClipPath }}>
                   <div className="mb-7 flex items-center gap-5"><div className="flex h-16 w-16 shrink-0 items-center justify-center" style={{ backgroundColor: decoration.color, clipPath: decoration.iconClipPath }}><Icon className="h-8 w-8 text-white" strokeWidth={2.25} /></div><h4 className="font-rejsfest text-2xl leading-[0.95] uppercase tracking-[0.04em] text-[#32322D]">{zone.title}</h4></div>
-                  <div className="space-y-6">
-                    {zone.blocks.map((block) => <div key={block.time} className="border-l-2 pl-4" style={{ borderColor: decoration.color }}><p className="mb-2 font-sans text-sm font-black uppercase tracking-[0.04em]" style={{ color: decoration.color }}>{block.label} <span className="mx-1 opacity-60">·</span> {block.time}</p><WorkshopItems items={block.items} /></div>)}
-                    {zone.continuous && <div className="border-t border-[#DED9E0] pt-5"><p className="mb-2 text-xs font-black uppercase tracking-[0.1em]" style={{ color: decoration.color }}>{zone.continuous.label} · {zone.continuous.time}</p><WorkshopItems items={zone.continuous.items} /></div>}
-                  </div>
+                  <div className="border-l-2 pl-4" style={{ borderLeftColor: decoration.color }}><WorkshopItems items={items} accentColor={decoration.color} /></div>
+                  {zone.continuous && <section className="mt-8 border border-dashed border-[#D1D5DB] p-4"><p className="mb-3 inline-flex rounded-xl bg-[#F3F4F6] px-2.5 py-1 text-xs font-bold text-[#4B5563]">{zone.continuous.time}</p><WorkshopItems items={zone.continuous.items} accentColor={decoration.color} /></section>}
                 </motion.article>
               );
             })}
@@ -166,10 +186,10 @@ export function ScheduleSection({ sectionId }: ScheduleSectionProps) {
 
           <section className="mt-10"><p className="mb-4 font-rejsfest text-2xl uppercase tracking-[0.04em] text-[#503967]">Prowadzący warsztaty</p><div className="grid gap-4 md:grid-cols-3">{workshops.speakers.map((speaker) => <article key={speaker.name} className="flex items-start gap-5 rounded-[1.1rem] border border-[#D4CDD7] bg-white p-5 shadow-[3px_4px_0_rgba(80,57,103,0.12)]">{speaker.image ? <ScheduleImages images={[{ source: speaker.image, alt: speaker.imageAlt ?? speaker.name, imageType: speaker.imageType }]} sizeClass="h-24 w-24 md:h-[6.5rem] md:w-[6.5rem]" /> : <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#503967] text-xs font-black tracking-wide text-white">{speaker.initials}</span>}<p className="text-sm leading-[1.45] text-[#4A454D]"><strong className="block text-base text-[#322D35]">{speaker.name}</strong>{speaker.description}</p></article>)}</div></section>
 
-          <div className="paper-grain mt-10 bg-[#CDB6D5] px-6 py-7 text-[#302C42] shadow-xl md:px-8 md:py-8" style={{ clipPath: "polygon(1% 0, 100% 1%, 99% 100%, 0 98%)" }}>
-            <div className="mb-4 flex flex-wrap items-baseline gap-x-5 gap-y-2"><p className="font-rejsfest text-3xl leading-none uppercase tracking-[0.04em]">{workshops.fun.title}</p><p className="text-xs font-black uppercase tracking-[0.1em] text-[#503967]">{workshops.fun.availability}</p></div>
+          <div className="paper-grain mt-10 bg-[#FFF5A8] px-6 py-7 text-[#302C42] shadow-xl md:px-8 md:py-8" style={{ clipPath: "polygon(1% 0, 100% 1%, 99% 100%, 0 98%)" }}>
+            <div className="mb-4 flex flex-wrap items-center gap-x-5 gap-y-3"><div className="flex h-13 w-13 shrink-0 items-center justify-center bg-[#302C42] text-white" style={{ clipPath: "polygon(5% 0, 100% 5%, 95% 100%, 0 95%)" }}><Gamepad2 className="h-7 w-7" strokeWidth={2.25} /></div><div><p className="font-rejsfest text-3xl leading-none uppercase tracking-[0.04em]">{workshops.fun.title}</p><p className="mt-1.5 text-xs font-black uppercase tracking-[0.1em] text-[#302C42]">{workshops.fun.availability}</p></div></div>
             <p className="mb-5 max-w-2xl text-base leading-[1.55] text-[#3E3A52]">{workshops.fun.description}</p>
-            <ul className="flex flex-wrap gap-2.5">{workshops.fun.activities.map((activity) => <li key={activity} className="bg-white/50 px-3 py-2 text-sm font-semibold text-[#373247]">{activity}</li>)}</ul>
+            <ul className="flex flex-wrap gap-2.5">{workshops.fun.activities.map((activity) => <li key={activity} className="border border-[#D6C65E] bg-white/85 px-3 py-2 text-sm font-semibold text-[#373247] shadow-[1px_2px_0_rgba(48,44,66,0.12)]">{activity}</li>)}</ul>
           </div>
         </div>
       </div>
