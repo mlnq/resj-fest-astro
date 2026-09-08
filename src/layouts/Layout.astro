@@ -42,6 +42,28 @@ const ogImage = new URL("logo.png", Astro.site).href;
 			</div>
 		</div>
 		<slot />
+		<div class="funding-strip">
+			<a
+				href="https://podlaskie.eu/"
+				target="_blank"
+				rel="noreferrer"
+				class="funding-strip__link"
+				aria-label="Województwo Podlaskie – strona oficjalna (otwiera się w nowej karcie)"
+			>
+				<img
+					src={`${baseUrl}partners/podlaskie.svg`}
+					alt="Podlaskie"
+					width="132"
+					height="67"
+					loading="lazy"
+					decoding="async"
+					class="funding-strip__logo"
+				/>
+			</a>
+			<p class="funding-strip__text">
+				Wydarzenie dofinansowane ze środków Województwa Podlaskiego
+			</p>
+		</div>
 		<script is:inline>
 			const hideLoader = () => {
 				document.body.classList.remove("is-loading");
@@ -130,6 +152,51 @@ const ogImage = new URL("logo.png", Astro.site).href;
 		}
 		50% {
 			opacity: 1;
+		}
+	}
+
+	.funding-strip {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.85rem;
+		padding: 1.75rem 1.25rem;
+		/* clear the floating mobile bottom nav on the landing page */
+		padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+		background: #ffffff;
+		border-top: 1px solid #ececec;
+		text-align: center;
+	}
+
+	.funding-strip__link {
+		display: inline-flex;
+		transition: opacity 160ms ease;
+	}
+
+	.funding-strip__link:hover {
+		opacity: 0.8;
+	}
+
+	.funding-strip__logo {
+		display: block;
+		width: auto;
+		height: 54px;
+	}
+
+	.funding-strip__text {
+		margin: 0;
+		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+		color: #4e5e7c;
+	}
+
+	@media (min-width: 768px) {
+		.funding-strip {
+			flex-direction: row;
+			justify-content: center;
+			gap: 1.4rem;
+			padding: 2rem 1.5rem;
 		}
 	}
 </style>
