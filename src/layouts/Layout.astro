@@ -2,6 +2,7 @@
 import "../styles/index.css";
 import "yet-another-react-lightbox/styles.css";
 import loaderLogo from "../assets/imports/logo.png";
+import podlaskieLogo from "../assets/podlaskie.png";
 
 type Props = {
   title?: string;
@@ -51,10 +52,10 @@ const ogImage = new URL("logo.png", Astro.site).href;
 				aria-label="Województwo Podlaskie – strona oficjalna (otwiera się w nowej karcie)"
 			>
 				<img
-					src={`${baseUrl}partners/podlaskie.svg`}
+					src={podlaskieLogo.src}
 					alt="Podlaskie"
-					width="132"
-					height="67"
+					width={podlaskieLogo.width}
+					height={podlaskieLogo.height}
 					loading="lazy"
 					decoding="async"
 					class="funding-strip__logo"
